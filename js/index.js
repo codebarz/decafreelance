@@ -2,6 +2,9 @@ $(document).ready(function () {
     $(".signupButton").click(function () {
         $(".formsArea").fadeIn();
     });
+    $(".formsAreaClose").click(function() {
+        $(".formsArea").fadeOut();
+    });
 
     $('#submitForm').click(function (e) {
         e.preventDefault();
@@ -13,7 +16,6 @@ $(document).ready(function () {
         var password = $('input[name="password"]').val();
         var category = $('#category').val();
 
-        alert('Hello');
         $.ajax({
             method: "POST",
             url: "http://localhost:3000/users",
@@ -27,7 +29,22 @@ $(document).ready(function () {
             },
             success: function (res) {
                 alert('Submitted');
+            },
+            beforeSend: function () {
+                $('.logoForm').fadeOut().fadeIn();
             }
+        });
+    });
+
+    $("#submitLog").click(function() {
+        var username = $("#username").val();
+        var password = $("#password").val();
+
+        $.ajax({
+            method: "GET",
+            dataType: "JSON",
+            url: "http://localhost:3000/users",
+            data: {}
         });
     });
 });
