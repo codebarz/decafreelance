@@ -6,7 +6,7 @@ $(document).ready(function () {
         $(".formsArea").fadeOut();
     });
 
-    $('#submitForm').click(function (e) {
+    $('#submitSignForm').submit(function (e) {
         e.preventDefault();
 
         var firstname = $('input[name="firstname"]').val();
@@ -36,7 +36,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#submitLog").click(function (e) {
+    $("#submitLogForm").submit(function (e) {
         e.preventDefault();
         var username = $("#username").val();
         var password = $("#password").val();
@@ -48,7 +48,7 @@ $(document).ready(function () {
             data: { "username": username, "password": password },
             success: function (res) {
                 if (res.length == 0) {
-                    alert("NO DATA!");
+                    $(".result").append('<p class="resultDanger">Incorrect username or password</p>')
                 }
                 else {
                     window.location.assign(`dashboard.html?username=${username}`);

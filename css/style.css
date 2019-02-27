@@ -11,6 +11,7 @@ html, body {
 .mainHeader {
     width: 100%;
     height: 70%;
+    position: relative;
 }
 .menuBar {
     height: 60px;
@@ -46,6 +47,48 @@ html, body {
 .menuUserButtons ul li.loginButton {
     color: #2a65ea;
 }
+.searchBar {
+    width: 50%;
+    height: 50px;
+    position: absolute;
+    z-index: 99999999;
+    top: 50%;
+    left: 25%;
+}
+.searchBar input[type="submit"] {
+    display: none;
+}
+.searchBar input[type="search"] {
+    width: 90%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 14px;
+    float: left;
+}
+.searchBar label {
+    width: 10%;
+    height: 100%;
+    float: left;
+    background: #2a65ea;
+    text-align: center;
+}
+.resultDanger {
+    background: #dc3232;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 2px;
+    text-align: center;
+    padding: 5px;
+    width: 50%;
+    margin: auto;
+}
+.searchBar label i {
+    color: #fff;
+    line-height: 50px;
+    font-size: 20px;
+}
 .formsArea {
     width: 100%;
     height: 100%;
@@ -63,7 +106,7 @@ html, body {
     position: absolute;
     top: 0;
     right: 0;
-    background: #dd0d0d;
+    background: #dc3232;
     z-index: 99999999;
 }
 .formsAreaClose i {
@@ -179,8 +222,8 @@ User Dashboard
     width: 100%;
     height: 50px;
     background: #2a65ea;
-    box-shadow: 0 0 2px #212121;
-    -webkit-box-shadow: 0 0 2px #212121;
+    /* box-shadow: 0 0 2px #212121;
+    -webkit-box-shadow: 0 0 2px #212121; */
     position: fixed;
     z-index: 9999;
 }
@@ -189,6 +232,35 @@ User Dashboard
     height: 100%;
     background: #fff;
     position: fixed;
-    z-index: 99;
+    z-index: 9999999;
     box-shadow: 0 0 4px #ccc;
+}
+.dashMenuHeader {
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    text-align: right;
+}
+.dashMenuHeader i {
+    font-size: 22px;
+    color: #999;
+}
+.dashThread {
+    width: 80%;
+    float: right;
+    height: 100%;
+    background: #f1f1f1;
+}
+.editProfileArea {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+/*Edit bootstrap container-fluid*/
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.bd-example {
+    height: 500px;
 }
