@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(".signupButton").click(function () {
         $(".formsArea").fadeIn();
     });
-    $(".formsAreaClose").click(function() {
+    $(".formsAreaClose").click(function () {
         $(".formsArea").fadeOut();
     });
 
@@ -36,15 +36,29 @@ $(document).ready(function () {
         });
     });
 
-    $("#submitLog").click(function() {
+    $("#submitLog").click(function (e) {
+        e.preventDefault();
         var username = $("#username").val();
         var password = $("#password").val();
 
         $.ajax({
-            method: "GET",
-            dataType: "JSON",
+            type: "GET",
+            dataType: "json",
             url: "http://localhost:3000/users",
-            data: {}
+            data: { "username": username, "password": password },
+            success: function (res) {
+                if (res.length == 0) {
+                    alert("NO DATA!");
+                }
+                else {
+                    window.location.assign(`dashboard.html?username=${username}`);
+                }
+            }
         });
     });
+
+    let searchUrl = new URLSearchParams(window.location.search);
+    searchUrl.has('username');
+    let param = searchUrl.get('username');
+
 });
