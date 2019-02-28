@@ -44,4 +44,27 @@ $(document).ready(function () {
 
     });
 
+    $("#delete").click(function (e) {
+        e.preventDefault();
+
+        let firstname = $("#firstname").val();
+        let lastname = $("#lastname").val();
+        let username = $("#username").val();
+        let email = $("#email").val();
+        let password = $("#password").val();
+        let id = $("#id").val();
+        let status = 1;
+
+        $.ajax({
+            type: "PUT",
+            url: `http://localhost:3000/users/${id}`,
+            data: { firstname: firstname, lastname: lastname, username: username, email: email, password: password, status: status },
+            success: function (res) {
+                alert('Deleted successfully');
+                window.location.assign("index.html");
+            }
+        });
+
+    });
+
 });

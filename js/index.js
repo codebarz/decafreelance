@@ -13,6 +13,10 @@ $(document).ready(function () {
     $(".formsAreaClose").click(function () {
         $(".formsArea").fadeOut();
     });
+    $(".formsAreaClose").click(function () {
+        $(".resultArea").fadeOut();
+        $('.searchBar').animate({ width: "50%" }, 500).animate({ left: "25%" }, 500).animate({ top: "50%" });
+    });
     $(".edit").click(function () {
         $(".editProfileArea").show();
         $("#allusers").hide();
@@ -22,6 +26,39 @@ $(document).ready(function () {
         $(".editProfileArea").hide();
         $("#allusers").show();
         $(".viewProfileArea").hide();
+    });
+
+    var timer;
+    $('#searchBar').on('keyup', function () {
+        $('.searchBar').animate({ top: "0" }, 500).animate({ left: "0" }, 500).animate({ width: "100%" }, 500);
+        $('.resultArea').fadeIn();
+        clearTimeout(timer);
+        timer = setTimeout(search, 2000);
+    });
+    $('#searchBar').on('keydown', function () {
+        // $('.searchBar').animate({top: "50%"}, 500);
+        clearTimeout(timer);
+    });
+
+    function search() {
+        var text = $("#searchBar").val();
+
+        $.ajax({
+            method: "GET",
+            dataType: "json",
+            url: `http://localhost:3000/users?category=${text}`,
+            success: function(res) {
+                for(i=0; i <= res.length; i++) {
+                    if(res[i].category == text) {
+                        alert(res[i].username);
+                    }
+                }
+            }
+        })
+
+    }
+    $("#searchBar").on("keyup", function() {
+        return search();
     });
 
     $('#submitSignForm').submit(function (e) {
@@ -74,8 +111,15 @@ $(document).ready(function () {
                 if (res.length == 0) {
                     $(".result").append('<p class="resultDanger">Incorrect username or password</p>')
                 }
-                else {
-                    window.location.assign(`dashboard.html?username=${username}`);
+
+                for (i in res) {
+                    if (res[i].status == 1) {
+                        $(".result").append('<p class="resultDanger">This account has been deleted.</p>')
+                    }
+
+                    else {
+                        window.location.assign(`dashboard.html?username=${username}`);
+                    }
                 }
             },
             beforeSend: function () {

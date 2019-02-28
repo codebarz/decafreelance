@@ -17,29 +17,12 @@ $(document).ready(function () {
                 allusers += `<div class="card-body">`;
                 allusers += `<h5 class="card-title">${res[i].username}</h5>`;
                 allusers += `<p class="card-text">${res[i].description}</p>`;
+                allusers += `<p class="card-text"><small class="text-muted">${res[i].category}</small></p>`;
                 allusers += `<p class="card-text"><small class="text-muted">Active since ${res[i].date}</small></p>`;
                 allusers += `<a class="cardLink" href="profile.html?username=${param}&view=${res[i].username}">View user</a>`;
                 allusers += `</div>`;
                 allusers += `</div>`;
                 $("#allusers").append(allusers);
-
-                // userprofile = "";
-                // userprofile += `<div class="card mb-3" style="max-width: 100%; margin-top: 20px;">`;
-                // userprofile += `<div class="row no-gutters">`;
-                // userprofile += `<div class="col-md-4">`;
-                // userprofile += `<img src="img/photography.jpg" class="card-img" alt="...">`;
-                // userprofile += `</div>`;
-                // userprofile += `<div class="col-md-8">`;
-                // userprofile += `<div class="card-body">`;
-                // userprofile += `<h5 class="card-title">${res[i].username}</h5>`;
-                // userprofile += `<p class="card-text">${res[i].descriptiom}</p>`;
-                // userprofile += `<p class="card-text"><small class="text-muted">${res[i].date}</small></p>`;
-                // userprofile += `</div>`;
-                // userprofile += `</div>`;
-                // userprofile += `</div>`;
-
-                // $("#userprofile").append(userprofile);
-
             }
         }
     });

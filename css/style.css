@@ -51,9 +51,10 @@ html, body {
     width: 50%;
     height: 50px;
     position: absolute;
-    z-index: 99999999;
+    z-index: 9999999999999999;
     top: 50%;
     left: 25%;
+    border: 1px solid #f1f1f1;
 }
 .searchBar input[type="submit"] {
     display: none;
@@ -73,6 +74,19 @@ html, body {
     float: left;
     background: #2a65ea;
     text-align: center;
+}
+.resultArea {
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    margin-top: 60px;
+    position: fixed;
+    z-index: 99999999;
+    left: 5%;
+    border-radius: 4px;
+    display: none;
+    box-shadow: 0 0 4px #f1f1f1;
+    -webkit-box-shadow: 0 0 4px #f1f1f1;
 }
 .resultDanger {
     background: #dc3232;

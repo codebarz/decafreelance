@@ -1,17 +1,6 @@
 {
   "users": [
     {
-      "firstname": "Tega",
-      "lastname": "Oke",
-      "email": "oketegah@gmail.com",
-      "username": "oketegah",
-      "password": "11861538da",
-      "category": "Programming & Tech",
-      "description": "A full stack software engineer with 10 years experience. Worked in all the big foyrs.",
-      "date": "28/02/2019",
-      "id": 1
-    },
-    {
       "firstname": "Mike",
       "lastname": "Adenuga",
       "email": "adenuga@gmail.com",
@@ -20,6 +9,19 @@
       "category": "Programming & Tech",
       "description": "CEO Globacom and many others. Been in the game for over a decade",
       "date": "28/02/2019",
+      "status": 0,
+      "id": 1
+    },
+    {
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "johndoe@gmail.com",
+      "username": "John Doe",
+      "password": "11861538da",
+      "category": "Programming & Tech",
+      "description": "Everybody loves me. I name non-existent people. I am married to Jane Doe",
+      "date": "28/02/2019",
+      "status": 0,
       "id": 2
     }
   ]
