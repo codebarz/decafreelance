@@ -32,8 +32,8 @@
     <div class="dashThread">
         <div class="threadArea">
             <div class="card-columns">
-                
-                <div id="allusers"></div>
+
+                <div id="allusers" style="display:none"></div>
             </div>
         </div>
 
@@ -42,8 +42,8 @@
                 <div class="dim"></div>
                 <img src="img/photography.jpg">
             </div>
-            <div class="profileImage"><img src="img/photography.jpg"></div> 
-        <div class="editFormArea">
+            <div class="profileImage"><img src="img/photography.jpg"></div>
+            <div class="editFormArea">
                 <form id="editForm">
                     <input type="text" name="firstname" id="firstname" value="" placeholder="First Name">
                     <input type="text" name="lastname" id="lastname" value="" placeholder="Last Name">
@@ -56,14 +56,35 @@
                 </form>
             </div>
 
-        <div class="editFeed">
+
+            <div class="editFeed">
                 <a class="twitter-timeline" data-theme="light"
                     href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park
                     Tweets -
                     Curated tweets by TwitterDev</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-    </div>
+        </div>
+        <div class="viewProfileArea">
+            <div class="coverImage">
+                <div class="dim"></div>
+                <img src="img/photography.jpg">
+            </div>
+            <div class="profileImage"><img src="img/photography.jpg"></div>
+            <div class="editFormArea">
+                <div id="userprofile"></div>
+            </div>
+        
+        
+            <div class="editFeed">
+                <a class="twitter-timeline" data-theme="light"
+                    href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park
+                    Tweets -
+                    Curated tweets by TwitterDev</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -74,6 +95,7 @@
         crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
     <script src="js/editprofile.js"></script>
+    <script src="js/getprofile.js"></script>
     <script src="js/getusers.js"></script>
 
 </body>

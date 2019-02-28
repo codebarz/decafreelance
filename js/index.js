@@ -13,6 +13,16 @@ $(document).ready(function () {
     $(".formsAreaClose").click(function () {
         $(".formsArea").fadeOut();
     });
+    $(".edit").click(function () {
+        $(".editProfileArea").show();
+        $("#allusers").hide();
+        $("#viewProfileAre").hide();
+    });
+    $(".feed").click(function () {
+        $(".editProfileArea").hide();
+        $("#allusers").show();
+        $(".viewProfileArea").hide();
+    });
 
     $('#submitSignForm').submit(function (e) {
         e.preventDefault();
@@ -24,10 +34,9 @@ $(document).ready(function () {
         var password = $('input[name="password"]').val();
         var category = $('#category').val();
         var briefdes = $("#briefdes").val();
-        var date = $.datepicker.formatDate('yy/mm/dd', new Date());
-        // var coverimage = $('#coverImage').on('change', function () {
-        //     return $(this).val();
-        // });
+        var fullDate = new Date();
+        var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+        var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
 
         $.ajax({
             method: "POST",
@@ -40,7 +49,7 @@ $(document).ready(function () {
                 "password": password,
                 "category": category,
                 "description": briefdes,
-                "date": date
+                "date": currentDate
             },
             success: function (res) {
                 alert('Submitted');
