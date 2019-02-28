@@ -21,6 +21,17 @@ html, body {
     bottom: 1%;
     left: 45%;
 }
+p.warnS {
+    text-align: center;
+    padding: 10px;
+    top: 50%;
+    font-size: 30px;
+    color: #ccc;
+    font-style: italic;
+}
+p.warnS i {
+    color: #eaea3f;
+}
 h1.siteCaption {
     margin: 70px auto;
     text-align: center;
