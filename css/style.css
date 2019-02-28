@@ -220,7 +220,7 @@ a.cardLink:hover {
     -webkit-transition: all linear .2s;
 }
 .signUp input[type="text"], .signUp input[type="password"],
-.signUp input[type="email"], .signUp select {
+.signUp input[type="email"], .signUp select, .signUp input[type="number"] {
     border: none;
     font-size: 12px;
     border-bottom: 1px solid #ccc;
@@ -254,7 +254,8 @@ a.cardLink:hover {
     right: 0;
     z-index: 999999999999999999999999999;
 } */
-.signUp input[type="text"].half {
+.signUp input[type="text"].half, .signUp input[type="email"].half,
+.signUp input[type="number"].half {
     width: 43%;
     margin: 0 1% 0 1%;
 }

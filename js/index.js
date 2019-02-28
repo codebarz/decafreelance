@@ -54,6 +54,8 @@ $(document).ready(function () {
         var email = $('input[name="email"]').val();
         var username = $('input[name="username"]').val();
         var password = $('input[name="password"]').val();
+        var price = $("#price").val();
+        var phonenumber = $("#number").val();
         var category = $('#category').val();
         var briefdes = $("#briefdes").val();
         var fullDate = new Date();
@@ -67,6 +69,8 @@ $(document).ready(function () {
                 "firstname": firstname,
                 "lastname": lastname,
                 "email": email,
+                "price": price,
+                "Phonenumber": phonenumber,
                 "username": username,
                 "password": password,
                 "category": category,

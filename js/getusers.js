@@ -12,7 +12,7 @@ $(document).ready(function () {
         success: function (res) {
             $.each(res, function (index, value) {
                 
-                if(value.username == param) {
+                if(value.username == param || value.status == 1) {
 
                 }
                 else {
@@ -23,6 +23,9 @@ $(document).ready(function () {
                 allusers += `<div class="card-body">`;
                 allusers += `<h5 class="card-title">${value.username}</h5>`;
                 allusers += `<p class="card-text">${value.description}</p>`;
+                allusers += `<ul class="list-group list-group-flush">`;
+                allusers += `<li class="list-group-item">${value.category}</li>`;
+                allusers += `</ul>`;
                 allusers += `<p class="card-text"><small class="text-muted">${value.category}</small></p>`;
                 allusers += `<p class="card-text"><small class="text-muted">Active since ${value.date}</small></p>`;
                 allusers += `<a class="cardLink" href="profile.html?username=${param}&view=${value.username}">View user</a>`;

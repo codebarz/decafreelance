@@ -1,46 +1,17 @@
 {
   "users": [
     {
-      "firstname": "Jane",
-      "lastname": "Doe",
-      "email": "janedoe@google.com",
-      "username": "janedoe",
-      "password": "janedoe",
-      "category": "Fashion",
-      "description": "Wife to john Doe",
+      "firstname": "Tega",
+      "lastname": "Oke",
+      "email": "oketegah@gmail.com",
+      "price": "100000",
+      "Phonenumber": "08051812473",
+      "username": "oketegah",
+      "password": "11861538da",
+      "category": "Programming & Tech",
+      "description": "A full stack software engineer with 10 years of experience. Advanced in JavaScript, Python, C++, C, Java",
       "date": "28/02/2019",
       "id": 1
-    },
-    {
-      "firstname": "Michael",
-      "lastname": "Oke",
-      "username": "oketegah",
-      "email": "oketegah@gmail.com",
-      "password": "11861538da",
-      "status": "1",
-      "id": 2
-    },
-    {
-      "firstname": "Mike",
-      "lastname": "Adenuga",
-      "email": "adenuga@gmail.com",
-      "username": "adenuga",
-      "password": "adenuga",
-      "category": "Business",
-      "description": "Been in this game for over a decade. More experienced than Lorem Ipsium",
-      "date": "28/02/2019",
-      "id": 3
-    },
-    {
-      "firstname": "Michael",
-      "lastname": "Jordan",
-      "email": "jordan@gmail.com",
-      "username": "jordan",
-      "password": "michaeljordan",
-      "category": "Fashion",
-      "description": "Best sports consultant. Availabel for all kind of sports. Over 10 decade of experience",
-      "date": "28/02/2019",
-      "id": 4
     }
   ]
 }
