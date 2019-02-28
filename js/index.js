@@ -1,6 +1,14 @@
 $(document).ready(function () {
     $(".signupButton").click(function () {
         $(".formsArea").fadeIn();
+        $(".signUp").show();
+        $(".login").hide();
+    });
+    $(".loginButton").click(function (e) {
+        e.preventDefault();
+        $(".formsArea").fadeIn();
+        $(".login").show();
+        $(".signUp").hide();
     });
     $(".formsAreaClose").click(function () {
         $(".formsArea").fadeOut();
@@ -15,6 +23,11 @@ $(document).ready(function () {
         var username = $('input[name="username"]').val();
         var password = $('input[name="password"]').val();
         var category = $('#category').val();
+        var briefdes = $("#briefdes").val();
+        var date = $.datepicker.formatDate('yy/mm/dd', new Date());
+        // var coverimage = $('#coverImage').on('change', function () {
+        //     return $(this).val();
+        // });
 
         $.ajax({
             method: "POST",
@@ -25,7 +38,9 @@ $(document).ready(function () {
                 "email": email,
                 "username": username,
                 "password": password,
-                "category": category
+                "category": category,
+                "description": briefdes,
+                "date": date
             },
             success: function (res) {
                 alert('Submitted');
@@ -38,13 +53,13 @@ $(document).ready(function () {
 
     $("#submitLogForm").submit(function (e) {
         e.preventDefault();
-        var username = $("#username").val();
-        var password = $("#password").val();
+        var username = $("#logusername").val();
+        var password = $("#logpassword").val();
 
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: "http://localhost:3000/users",
+            url: `http://localhost:3000/users?username=${username}&password=${password}`,
             data: { "username": username, "password": password },
             success: function (res) {
                 if (res.length == 0) {
@@ -53,12 +68,12 @@ $(document).ready(function () {
                 else {
                     window.location.assign(`dashboard.html?username=${username}`);
                 }
+            },
+            beforeSend: function () {
+                setInterval(function () {
+                    $(".logoFrame").fadeOut().fadeIn();
+                }, 1000);
             }
         });
     });
-
-    let searchUrl = new URLSearchParams(window.location.search);
-    searchUrl.has('username');
-    let param = searchUrl.get('username');
-
 });

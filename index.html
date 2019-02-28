@@ -21,12 +21,13 @@
         <div class="formsTypes">
             <div class="formsAreaClose"><i class="mdi mdi-close"></i></div>
             <!-- <div class="userFormNot"></div> -->
-            <!-- <form id="submitSignForm" class="signUp">
+            <form id="submitSignForm" class="signUp">
                 <div class="logoFrame"></div>
                 <h4>Register . Explore . Connect</h4>
                 <p>Create an account to access freelancers from all sectors</p>
-                <label for="userImage"></label>
-                <img src="" id="userImage">
+                <label for="userImage" class="userImage">Upload Image</label>
+                <input type="file" id="userImage" name="userImage"><br>
+                <img src="" id="imageprev">
                 <input type="text" class="half" name="firstname" id="firstname" placeholder="First Name" required>
                 <input type="text" class="half" name="lastname" id="lastname" placeholder="Last Name" required>
                 <input type="email" name="email" id="email" placeholder="Email Address" required>
@@ -44,16 +45,17 @@
                     <option value="Digital Marketing">Digital Marketing</option>
                     <option value="Video & Animation">Video & Animation</option>
                 </select>
+                <textarea name="briefdes" id="briefdes"></textarea>
                 <br>
                 <input type="submit" name="submitForm" id="submitForm" value="Submit">
                 <br>
-                <span>Already registered? <a href="#">Login</a></span>
-            </form> -->
+                <span>Already registered? <a class="loginButton" href="#">Login</a></span>
+            </form>
             <form class="login" id="submitLogForm">
                 <div class="logoFrame"></div>
                 <div class="result"></div>
-                <input type="text" name="username" id="username" placeholder="username"><br>
-                <input type="password" name="password" id="password" placeholder="password"><br>
+                <input type="text" name="username" id="logusername" placeholder="username"><br>
+                <input type="password" name="password" id="logpassword" placeholder="password"><br>
                 <input type="submit" name="submitLog" id="submitLog" value="Login"><br>
                 <a href="#">Password reset</a>
             </form>

@@ -133,6 +133,16 @@ html, body {
     float: right;
     height: 100%;
     text-align: center;
+    display: none;
+}
+.signUp input[type="file"] {
+    display: none;
+}
+label.userImage {
+    padding: 10px;
+    background: #2a65ea;
+    color: #fff;
+    font-size: 12px;
 }
 .signUp input[type="text"], .signUp input[type="password"],
 .signUp input[type="email"], .signUp select {
@@ -199,6 +209,7 @@ html, body {
     border-radius: 4px;
     padding: 10px;
     margin-top: 15%;
+    display: none;
 }
 .login input[type="text"], .login input[type="password"] {
     width: 40%;
@@ -224,36 +235,118 @@ User Dashboard
     background: #2a65ea;
     /* box-shadow: 0 0 2px #212121;
     -webkit-box-shadow: 0 0 2px #212121; */
-    position: fixed;
-    z-index: 9999;
 }
 .dashMenu {
-    width: 20%;
-    height: 100%;
+    width: 100%;
+    height: 50px;
     background: #fff;
-    position: fixed;
-    z-index: 9999999;
-    box-shadow: 0 0 4px #ccc;
 }
 .dashMenuHeader {
     padding: 10px;
-    border-bottom: 1px solid #f1f1f1;
     text-align: right;
+    background: #fff;
 }
 .dashMenuHeader i {
     font-size: 22px;
     color: #999;
 }
 .dashThread {
-    width: 80%;
-    float: right;
+    width: 100%;
     height: 100%;
+    margin: auto;
     background: #f1f1f1;
 }
 .editProfileArea {
     width: 100%;
     height: 100%;
     background: #fff;
+    padding: 0 0 10px 0;
+}
+.coverImage {
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.dim {
+    background: rgba(0, 0, 0, .5);
+    z-index: 99;
+}
+.coverImage img {
+    width: 100%;
+    height: 100%;
+}
+.menuButtons {
+    float: left;
+}
+ul.menuButtons {
+    display: block;
+    text-align: center;
+    padding-left: 50px;
+}
+ul.menuButtons li {
+    display: inline-block;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.profileImage {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 100%;
+    border: 6px solid #fff;
+    margin-top: -50px;
+    margin-left: 20px
+}
+.profileImage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.editFormArea {
+    width: 70%;
+    padding: 10px;
+    margin: 20px auto;
+    float: left;
+}
+.editFeed {
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+    float: right;
+    margin: 10px 0;
+    background: url("../img/line_ver2.gif") repeat-y left;
+}
+.threadArea {
+    background: #f1f1f1;
+    width: 70%;
+    padding-top: 20px;
+}
+
+#editForm {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+#editForm input[type="text"], #editForm input[type="password"], 
+#editForm input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 45%;
+    float: left;
+    margin: 20px 10px;
+    font-size: 12px;
+    padding: 10px;
+    font-weight: bold;
+}
+#editForm input[type="submit"] {
+    padding: 10px 30px;
+    background: #2a65ea;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    margin: auto;
+    font-weight: bold;
 }
 
 /*Edit bootstrap container-fluid*/
@@ -263,4 +356,7 @@ User Dashboard
 }
 .bd-example {
     height: 500px;
+}
+.card-text {
+    font-size: 14px !important;
 }

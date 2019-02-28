@@ -1,13 +1,3 @@
 {
-  "users": [
-    {
-      "firstname": "Tega",
-      "lastname": "Oke",
-      "email": "oketegah@gmail.com",
-      "username": "oketegah",
-      "password": "11861538da",
-      "category": "Programming & Tech",
-      "id": 1
-    }
-  ]
+  "users": []
 }
