@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    setInterval(function() {
+    setInterval(function () {
         $(".logoArea").fadeOut().fadeIn();
     }, 1000);
     $(".signupButton").click(function () {
@@ -24,18 +24,20 @@ $(document).ready(function () {
         $(".editProfileArea").show();
         $("#allusers").hide();
         $(".viewProfileArea").hide();
+        $(".logoArea").css("display", "none");
     });
     $(".feed").click(function () {
         $(".editProfileArea").hide();
         $("#allusers").show();
-        $(".viewProfileArea").hide();
+        $(".viewProfileArea").show();
+        $(".logoArea").css("display", "block");
     });
     $("#searchBar").on("keyup", function () {
         $('.searchBar').animate({ top: "0" }, 500).animate({ left: "0" }, 500).animate({ width: "100%" }, 500);
         $('.resultArea').fadeIn();
         var query = $("#searchBar").val();
         var expression = new RegExp(query, "i");
-        $.getJSON("db.json", function(data) {
+        $.getJSON("db.json", function (data) {
             $.each(data, function (key, value) {
                 if (value.category.query(expression) != -1 || value.username.query(expression) != -1) {
                     $(".resultArea").append('<p>' + value.username + '</p>')

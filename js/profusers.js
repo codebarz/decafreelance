@@ -6,15 +6,15 @@ $(document).ready(function () {
         type: "GET",
         url: `http://localhost:3000/users?username=${param}`,
         success: function (res) {
-            for (i in res) {
-                
+            for (j in res) {
+
 
                 userprofile = "";
                 userprofile += `<div class="card" style="max-width: 100%; margin-top: 20px;">`;
-        
+
                 userprofile += `<div class="card-body">`;
-                userprofile += `<h5 class="card-title">${res[i].username}</h5>`;
-                userprofile += `<p class="card-text">${res[i].description}</p>`;
+                userprofile += `<h5 class="card-title">${res[j].username}</h5>`;
+                userprofile += `<p class="card-text">${res[j].description}</p>`;
                 userprofile += `<div class="row">`;
                 userprofile += `<div class="col-sm-4 alignCenter"><i class="profIcons mdi mdi-phone"></i><br>${res[i].Phonenumber}</div>`;
                 userprofile += `<div class="col-sm-4 alignCenter"><i class="profIcons mdi mdi-cash-multiple"></i><br>&#x20a6;${res[i].price}</div>`;
@@ -27,7 +27,7 @@ $(document).ready(function () {
                 userprofile += `</div>`;
                 userprofile += `</div>`;
 
-                $("#userprofile").append(userprofile);
+                $("#allusers").append(userprofile);
 
             }
         }

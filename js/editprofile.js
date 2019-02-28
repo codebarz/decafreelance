@@ -17,6 +17,9 @@ $(document).ready(function () {
                 $('#username').val(res[i].username);
                 $('#email').val(res[i].email);
                 $('#password').val(res[i].password);
+                $("#phonenumber").val(res[i].Phonenumber);
+                $("#price").val(res[i].price);
+                $("#briefdes").val(res[i].description);
                 $("#id").val(res[i].id);
 
             }
@@ -31,12 +34,15 @@ $(document).ready(function () {
         let username = $("#username").val();
         let email = $("#email").val();
         let password = $("#password").val();
+        let price = $("#price").val();
+        let phonenumber = $("#phonenumber").val();
+        let description = $("#briefdes").val();
         let id = $("#id").val();
 
         $.ajax({
             type: "PUT",
             url: `http://localhost:3000/users/${id}`,
-            data: { firstname: firstname, lastname: lastname, username: username, email: email, password: password },
+            data: { firstname: firstname, price: price, Phonenumber: phonenumber, description: description, lastname: lastname, username: username, email: email, password: password },
             success: function (res) {
                 alert('Submitted successfully');
             }
@@ -52,13 +58,19 @@ $(document).ready(function () {
         let username = $("#username").val();
         let email = $("#email").val();
         let password = $("#password").val();
+        let price = $("#price").val();
+        let phonenumber = $("#phonenumber").val();
+        let description = $("#briefdes").val();
         let id = $("#id").val();
+        var fullDate = new Date();
+        var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+        var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
         let status = 1;
 
         $.ajax({
             type: "PUT",
             url: `http://localhost:3000/users/${id}`,
-            data: { firstname: firstname, lastname: lastname, username: username, email: email, password: password, status: status },
+            data: { firstname: firstname, price: price, Phonenumber: phonenumber, description: description, lastname: lastname, username: username, email: email, password: password, status: status, date: currentDate },
             success: function (res) {
                 alert('Deleted successfully');
                 window.location.assign("index.html");
