@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    setInterval(function() {
+        $(".logoArea").fadeOut().fadeIn();
+    }, 1000);
     $(".signupButton").click(function () {
         $(".formsArea").fadeIn();
         $(".signUp").show();
@@ -27,7 +30,7 @@ $(document).ready(function () {
         $("#allusers").show();
         $(".viewProfileArea").hide();
     });
-    $("#searchBar").on("keydown", function () {
+    $("#searchBar").on("keyup", function () {
         $('.searchBar').animate({ top: "0" }, 500).animate({ left: "0" }, 500).animate({ width: "100%" }, 500);
         $('.resultArea').fadeIn();
         var query = $("#searchBar").val();

@@ -12,14 +12,12 @@
       "id": 1
     },
     {
-      "firstname": "Tega",
+      "firstname": "Michael",
       "lastname": "Oke",
-      "email": "oketegah@gmail.com",
       "username": "oketegah",
+      "email": "oketegah@gmail.com",
       "password": "11861538da",
-      "category": "Programming & Tech",
-      "description": "Full Stack Software Engineer. Over 10 years Experience.",
-      "date": "28/02/2019",
+      "status": "1",
       "id": 2
     },
     {
@@ -32,6 +30,17 @@
       "description": "Been in this game for over a decade. More experienced than Lorem Ipsium",
       "date": "28/02/2019",
       "id": 3
+    },
+    {
+      "firstname": "Michael",
+      "lastname": "Jordan",
+      "email": "jordan@gmail.com",
+      "username": "jordan",
+      "password": "michaeljordan",
+      "category": "Fashion",
+      "description": "Best sports consultant. Availabel for all kind of sports. Over 10 decade of experience",
+      "date": "28/02/2019",
+      "id": 4
     }
   ]
 }
