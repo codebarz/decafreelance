@@ -200,7 +200,12 @@ label.userImage {
     background: #2a65ea;
     padding: 10px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 10px;
+    text-decoration: none;
+}
+h5.card-title {
+    font-size: 16px !important;
+    font-weight: bold;
 }
 a.cardLink {
     background: #2a65ea;
@@ -373,7 +378,7 @@ ul.menuButtons {
 ul.menuButtons li {
     display: inline-block;
     padding: 10px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -446,5 +451,23 @@ ul.menuButtons li {
     height: 500px;
 }
 .card-text {
-    font-size: 14px !important;
+    font-size: 12px !important;
+}
+ul.list-group {
+    font-size: 12px !important;
+}
+ul.list-group li i {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+.card-columns .card {
+    width: 70% !important;
+}
+.price {
+    color: #2a65ea;
+    font-weight: bold;
+}
+.card-columns {
+    column-gap: 0 !important;
 }
