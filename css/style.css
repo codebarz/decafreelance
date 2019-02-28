@@ -51,7 +51,7 @@ html, body {
     width: 50%;
     height: 50px;
     position: absolute;
-    z-index: 9999999999999999;
+    z-index: 999999999;
     top: 50%;
     left: 25%;
     border: 1px solid #f1f1f1;
@@ -111,7 +111,7 @@ html, body {
     /* background: rgba(0, 123, 255, .5); */
     display: none;
     position: fixed;
-    z-index: 999999999;
+    z-index: 99999999999999999999;
     text-align: center;
 }
 .formsAreaClose {

@@ -1,28 +1,37 @@
 {
   "users": [
     {
+      "firstname": "Jane",
+      "lastname": "Doe",
+      "email": "janedoe@google.com",
+      "username": "janedoe",
+      "password": "janedoe",
+      "category": "Fashion",
+      "description": "Wife to john Doe",
+      "date": "28/02/2019",
+      "id": 1
+    },
+    {
+      "firstname": "Tega",
+      "lastname": "Oke",
+      "email": "oketegah@gmail.com",
+      "username": "oketegah",
+      "password": "11861538da",
+      "category": "Programming & Tech",
+      "description": "Full Stack Software Engineer. Over 10 years Experience.",
+      "date": "28/02/2019",
+      "id": 2
+    },
+    {
       "firstname": "Mike",
       "lastname": "Adenuga",
       "email": "adenuga@gmail.com",
       "username": "adenuga",
       "password": "adenuga",
-      "category": "Programming & Tech",
-      "description": "CEO Globacom and many others. Been in the game for over a decade",
+      "category": "Business",
+      "description": "Been in this game for over a decade. More experienced than Lorem Ipsium",
       "date": "28/02/2019",
-      "status": 0,
-      "id": 1
-    },
-    {
-      "firstname": "John",
-      "lastname": "Doe",
-      "email": "johndoe@gmail.com",
-      "username": "John Doe",
-      "password": "11861538da",
-      "category": "Programming & Tech",
-      "description": "Everybody loves me. I name non-existent people. I am married to Jane Doe",
-      "date": "28/02/2019",
-      "status": 0,
-      "id": 2
+      "id": 3
     }
   ]
 }
