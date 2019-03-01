@@ -152,6 +152,16 @@ h1.siteCaption {
     width: 50%;
     margin: auto;
 }
+.resultSuccess {
+    background: #4caf50;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 2px;
+    text-align: center;
+    padding: 5px;
+    width: 50%;
+    margin: auto;
+}
 .searchBar label i {
     color: #fff;
     line-height: 50px;

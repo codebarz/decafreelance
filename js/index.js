@@ -104,7 +104,7 @@ $(document).ready(function () {
                 "date": currentDate
             },
             success: function (res) {
-                alert('Submitted');
+                $(".result").append('<p class="resultSuccess">Successful. Kindly Login</p>')
             },
             beforeSend: function () {
                 $('.logoForm').fadeOut().fadeIn();
@@ -124,7 +124,7 @@ $(document).ready(function () {
             data: { "username": username, "password": password },
             success: function (res) {
                 if (res.length == 0) {
-                    $(".result").append('<p class="resultDanger">Incorrect username or password</p>')
+                    $(".result").append('<p class="resultDanger">Incorrect username or password</p>').fadeOut();
                 }
 
                 for (i in res) {
@@ -140,7 +140,7 @@ $(document).ready(function () {
             beforeSend: function () {
                 setInterval(function () {
                     $(".logoFrame").fadeOut().fadeIn();
-                }, 1000);
+                }, 5000);
             }
         });
     });

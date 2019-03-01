@@ -64,6 +64,19 @@
       "description": "I dominate the PC software architecture. Owner of microsoft,creator of the windows operating system. ",
       "date": "28/02/2019",
       "id": 5
+    },
+    {
+      "firstname": "Ogunlana",
+      "lastname": "Nurudeen",
+      "email": "nuru@gmail.com",
+      "price": "50000",
+      "Phonenumber": "00809989988",
+      "username": "Nuru Global",
+      "password": "11861538da",
+      "category": "Programming & Tech",
+      "description": "A multinational mobile communication freelancer",
+      "date": "1/03/2019",
+      "id": 6
     }
   ]
 }
