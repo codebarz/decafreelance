@@ -107,6 +107,17 @@ h1.siteCaption {
     font-size: 14px;
     float: left;
 }
+
+@media only screen and (min-width: 160px) and (max-width: 600px) {
+    .resultArea {
+        width: 90%;
+        left: 5%;
+    }
+    .searchBar {
+        width: 90%;
+        left: 5%;
+    }
+}
 .searchBar label {
     width: 10%;
     height: 100%;
@@ -115,13 +126,14 @@ h1.siteCaption {
     text-align: center;
 }
 .resultArea {
-    width: 90%;
+    width: 30%;
     height: 90%;
+    overflow-y: scroll;
     background: #fff;
     margin-top: 60px;
     position: fixed;
     z-index: 99999999;
-    left: 5%;
+    left: 35%;
     border-radius: 4px;
     display: none;
     box-shadow: 0 0 4px #f1f1f1;

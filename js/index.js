@@ -32,21 +32,46 @@ $(document).ready(function () {
         $(".viewProfileArea").show();
         $(".logoArea").css("display", "block");
     });
-    $("#searchBar").on("keyup", function () {
+
+    var timer;
+    var doneTypingInterval = 5000;
+    $('#searchBar').keyup(function () {
         $('.searchBar').animate({ top: "0" }, 500).animate({ left: "0" }, 500).animate({ width: "100%" }, 500);
         $('.resultArea').fadeIn();
-        var query = $("#searchBar").val();
-        var expression = new RegExp(query, "i");
-        $.getJSON("db.json", function (data) {
-            $.each(data, function (key, value) {
-                if (value.category.query(expression) != -1 || value.username.query(expression) != -1) {
-                    $(".resultArea").append('<p>' + value.username + '</p>')
-                    alert(value.username);
-                }
-
-            });
-        });
+        clearTimeout(timer);
+        if ($('#searchBar').val()) {
+            timer = setTimeout(query, doneTypingInterval);
+        }
     });
+
+
+    function query() {
+        var searchQuery = $("#searchBar").val();
+
+        $.ajax({
+            method: "GET",
+            dataType: "json",
+            url: `http://localhost:3000/users?category=${searchQuery}`,
+            success: function (res) {
+                $.each(res, function (index, value) {
+                    allusers = "";
+                    allusers += `<div class="card-columns">`;
+                    allusers += `<div class="card">`;
+                    allusers += `<div class="card-body">`;
+                    allusers += `<h5 class="card-title">${value.username}</h5>`;
+                    allusers += `<p class="card-text">${value.description}</p>`;
+                    allusers += `<p class="card-text"><small class="text-muted">Active since ${value.date}</small></p>`;
+                    allusers += `<a class="cardLink" href="profile.html?username=${value.username}">View user</a>`;
+                    allusers += `</div>`;
+                    allusers += `</div>`;
+                    allusers += `</div>`;
+
+                    $(".resultArea").append(allusers);
+                });
+            }
+        });
+
+    }
 
     $('#submitSignForm').submit(function (e) {
         e.preventDefault();
