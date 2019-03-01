@@ -77,6 +77,32 @@
       "description": "A multinational mobile communication freelancer",
       "date": "1/03/2019",
       "id": 6
+    },
+    {
+      "firstname": "Michael",
+      "lastname": "Jackson",
+      "email": "jack@yahoo.com",
+      "price": "10000000",
+      "Phonenumber": "1449900909",
+      "username": "Zenith Global",
+      "password": "1234",
+      "category": "Music & Audio",
+      "description": "I can dance and sing at your parties",
+      "date": "1/03/2019",
+      "id": 7
+    },
+    {
+      "firstname": "hhh",
+      "lastname": "hhh",
+      "email": "hhh@g.com",
+      "price": "999",
+      "Phonenumber": "999",
+      "username": "jjjj",
+      "password": "999",
+      "category": "Programming & Tech",
+      "description": "888",
+      "date": "1/03/2019",
+      "id": 8
     }
   ]
 }

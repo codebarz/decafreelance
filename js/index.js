@@ -85,31 +85,52 @@ $(document).ready(function () {
         var category = $('#category').val();
         var briefdes = $("#briefdes").val();
         var fullDate = new Date();
+        var cpassword = $("#cpassword").val();
         var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
         var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
 
-        $.ajax({
-            method: "POST",
-            url: "http://localhost:3000/users",
-            data: {
-                "firstname": firstname,
-                "lastname": lastname,
-                "email": email,
-                "price": price,
-                "Phonenumber": phonenumber,
-                "username": username,
-                "password": password,
-                "category": category,
-                "description": briefdes,
-                "date": currentDate
-            },
-            success: function (res) {
-                $(".result").append('<p class="resultSuccess">Successful. Kindly Login</p>')
-            },
-            beforeSend: function () {
-                $('.logoForm').fadeOut().fadeIn();
-            }
-        });
+        if (password != cpassword) {
+            $(".result").append('<p class="resultDanger">Passwords do not match</p>');
+        }
+        else {
+            $.ajax({
+                method: "GET",
+                dataType: "json",
+                url: `http://localhost:3000/users?username=${username}`,
+                success: function (res) {
+                    if (res.length == 1) {
+                        $(".result").append('<p class="resultDanger">Username already exist</p>');
+                    }
+                    else {
+
+                        $.ajax({
+                            method: "POST",
+                            url: "http://localhost:3000/users",
+                            data: {
+                                "firstname": firstname,
+                                "lastname": lastname,
+                                "email": email,
+                                "price": price,
+                                "Phonenumber": phonenumber,
+                                "username": username,
+                                "password": password,
+                                "category": category,
+                                "description": briefdes,
+                                "date": currentDate
+                            },
+                            success: function (res) {
+                                $(".result").append('<p class="resultSuccess">Successful. Kindly Login</p>')
+                            },
+                            beforeSend: function () {
+                                $('.logoForm').fadeOut().fadeIn();
+                            }
+                        });
+                    }
+                }
+            })
+
+        }
+
     });
 
     $("#submitLogForm").submit(function (e) {
