@@ -34,7 +34,7 @@
       "Phonenumber": "08051812473",
       "username": "oketegah",
       "password": "11861538da",
-      "category": "Programming & Tech",
+      "category": "Fashion",
       "description": "A full stack software engineer with over 10 decades of experience. Worked in all the big fours and more. I cheap and easily accessible.",
       "date": "28/02/2019",
       "id": 3
@@ -64,6 +64,45 @@
       "description": "I dominate the PC software architecture. Owner of microsoft,creator of the windows operating system. ",
       "date": "28/02/2019",
       "id": 5
+    },
+    {
+      "firstname": "Ogunlana",
+      "lastname": "Nurudeen",
+      "email": "nuru@gmail.com",
+      "price": "50000",
+      "Phonenumber": "00809989988",
+      "username": "Nuru Global",
+      "password": "11861538da",
+      "category": "Programming & Tech",
+      "description": "A multinational mobile communication freelancer",
+      "date": "1/03/2019",
+      "id": 6
+    },
+    {
+      "firstname": "Michael",
+      "lastname": "Jackson",
+      "email": "jack@yahoo.com",
+      "price": "10000000",
+      "Phonenumber": "1449900909",
+      "username": "Zenith Global",
+      "password": "1234",
+      "category": "Music & Audio",
+      "description": "I can dance and sing at your parties",
+      "date": "1/03/2019",
+      "id": 7
+    },
+    {
+      "firstname": "hhh",
+      "lastname": "hhh",
+      "email": "hhh@g.com",
+      "price": "999",
+      "Phonenumber": "999",
+      "username": "jjjj",
+      "password": "999",
+      "category": "Programming & Tech",
+      "description": "888",
+      "date": "1/03/2019",
+      "id": 8
     }
   ]
 }

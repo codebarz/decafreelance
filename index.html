@@ -21,7 +21,9 @@
     <div class="socialMedia"></div>
     <div class="resultArea">
         <div class="formsAreaClose"><i class="mdi mdi-close"></i></div>
-        <p class="warnS"><i class="mdi mdi-alert"></i>This service is currently not available. Kindly login to use other features</p>
+        <div class="card-columns">
+            <div id="resultArea"></div>
+        </div>
     </div>
     <div class="formsArea">
         <div class="formsTypes">
@@ -31,6 +33,7 @@
                 <div class="logoFrame"><img src="img/orculancee.png"></div>
                 <h4>Register . Explore . Connect</h4>
                 <p>Create an account to access freelancers from all sectors</p>
+                <div class="result"></div>
                 <!-- <label for="userImage" class="userImage">Upload Image</label>
                 <input type="file" id="userImage" name="userImage"><br> -->
                 <img src="" id="imageprev">
@@ -54,8 +57,8 @@
                     <option value="Video & Animation">Video & Animation</option>
                     <option value="Engineering">Engineering</option>
                 </select>
-                <textarea name="briefdes" id="briefdes" rows="5"
-                    placeholder="Brief description about yourself"></textarea>
+                <textarea name="briefdes" id="briefdes" rows="5" placeholder="Brief description about yourself"
+                    required></textarea>
                 <br>
                 <input type="submit" name="submitForm" id="submitForm" value="Submit">
                 <br>
@@ -74,7 +77,8 @@
 
     <div class="mainHeader">
         <div class="searchBar">
-            <input type="search" name="searchBar" id="searchBar" placeholder="Try a category 'Computer Programming'">
+            <input type="search" name="searchBar" id="searchBar"
+                placeholder="Try a category 'Business', 'Programming & Tech'">
             <label for="submitSearch"><i class="mdi mdi-magnify"></i></label>
             <input type="submit" name="submitSearch" id="submitSearch" value="">
         </div>
