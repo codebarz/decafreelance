@@ -126,14 +126,17 @@ h1.siteCaption {
     text-align: center;
 }
 .resultArea {
-    width: 30%;
-    height: 90%;
+    width: auto;
+    max-width: 50%;
+    height: auto;
+    padding: 10px;
+    max-height: 70%;
     overflow-y: scroll;
     background: #fff;
     margin-top: 60px;
     position: fixed;
     z-index: 99999999;
-    left: 35%;
+    left: 25%;
     border-radius: 4px;
     display: none;
     box-shadow: 0 0 4px #f1f1f1;

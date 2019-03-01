@@ -55,18 +55,17 @@ $(document).ready(function () {
             success: function (res) {
                 $.each(res, function (index, value) {
                     allusers = "";
-                    allusers += `<div class="card-columns">`;
-                    allusers += `<div class="card">`;
+                    allusers += `<div class="card" style="width: 100% !important">`;
                     allusers += `<div class="card-body">`;
                     allusers += `<h5 class="card-title">${value.username}</h5>`;
                     allusers += `<p class="card-text">${value.description}</p>`;
+                    allusers += `<p class="card-text"><small class="text-muted" style="font-size: 12px"><i class="mdi mdi-certificate"></i> ${value.category}</small></p>`;
                     allusers += `<p class="card-text"><small class="text-muted">Active since ${value.date}</small></p>`;
-                    allusers += `<a class="cardLink" href="profile.html?username=${value.username}">View user</a>`;
-                    allusers += `</div>`;
+                    allusers += `<a class="cardLink" href="profile.html?view=${value.username}">View user</a>`;
                     allusers += `</div>`;
                     allusers += `</div>`;
 
-                    $(".resultArea").append(allusers);
+                    $("#resultArea").append(allusers);
                 });
             }
         });
