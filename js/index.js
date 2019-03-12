@@ -150,6 +150,9 @@ $(document).ready(function () {
                         $(".result").fadeOut();
                     }, 5000);
                 }
+                else {
+
+                localStorage.setItem('username' , username);
 
                 for (i in res) {
                     if (res[i].status == 1) {
@@ -160,6 +163,7 @@ $(document).ready(function () {
                         window.location.assign(`dashboard.html?username=${username}`);
                     }
                 }
+            }
             },
             beforeSend: function () {
                 setInterval(function () {
