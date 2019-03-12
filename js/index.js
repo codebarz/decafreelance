@@ -61,7 +61,7 @@ $(document).ready(function () {
                     allusers += `<p class="card-text">${value.description}</p>`;
                     allusers += `<p class="card-text"><small class="text-muted" style="font-size: 12px"><i class="mdi mdi-certificate"></i> ${value.category}</small></p>`;
                     allusers += `<p class="card-text"><small class="text-muted">Active since ${value.date}</small></p>`;
-                    allusers += `<a class="cardLink" href="profile.html?view=${value.username}">View user</a>`;
+                    allusers += `<a class="cardLink" href="profile.html?username=${value.username}&view=${value.username}">View user</a>`;
                     allusers += `</div>`;
                     allusers += `</div>`;
 
@@ -145,7 +145,10 @@ $(document).ready(function () {
             data: { "username": username, "password": password },
             success: function (res) {
                 if (res.length == 0) {
-                    $(".result").append('<p class="resultDanger">Incorrect username or password</p>').fadeOut();
+                    $(".result").append('<p class="resultDanger">Incorrect username or password</p>');
+                    setInterval(function () {
+                        $(".result").fadeOut();
+                    }, 5000);
                 }
 
                 for (i in res) {
@@ -161,7 +164,7 @@ $(document).ready(function () {
             beforeSend: function () {
                 setInterval(function () {
                     $(".logoFrame").fadeOut().fadeIn();
-                }, 5000);
+                }, 1000);
             }
         });
     });

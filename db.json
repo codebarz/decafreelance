@@ -27,16 +27,14 @@
       "id": 2
     },
     {
-      "firstname": "Tega",
-      "lastname": "Oke",
-      "email": "oketegah@gmail.com",
+      "firstname": "Tegah",
       "price": "1000000",
       "Phonenumber": "08051812473",
-      "username": "oketegah",
-      "password": "11861538da",
-      "category": "Fashion",
       "description": "A full stack software engineer with over 10 decades of experience. Worked in all the big fours and more. I cheap and easily accessible.",
-      "date": "28/02/2019",
+      "lastname": "Oke",
+      "username": "oketegah",
+      "email": "oketegah@gmail.com",
+      "password": "11861538da",
       "id": 3
     },
     {

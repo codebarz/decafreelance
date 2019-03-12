@@ -17,7 +17,7 @@ $(document).ready(function () {
                 userprofile += `<p class="card-text">${res[i].description}</p>`;
                 userprofile += `<div class="row">`;
                 userprofile += `<div class="col-sm-4 alignCenter"><i class="profIcons mdi mdi-phone"></i><br><a href="tel:${res[i].Phonenumber}">${res[i].Phonenumber}</a></div>`;
-                userprofile += `<div class="col-sm-4 alignCenter"><i class="profIcons mdi mdi-cash-multiple"></i><br>&#x20a6;${res[i].price}</div>`;
+                userprofile += `<div class="col-sm-4 alignCenter"><i class="profIcons mdi mdi-cash-multiple"></i><br> &#x20a6;${res[i].price}</div>`;
                 userprofile += `<div class="col-sm-4 alignCenter"><i class="profIcons mdi mdi-email"></i><br><a href="mailto:${res[i].email}?Subject=From%20%Orculance">${res[i].email}</a></div>`;
                 userprofile += `</div><br>`;
                 userprofile += `<div class="row">`;
