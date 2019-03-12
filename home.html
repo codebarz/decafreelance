@@ -50,28 +50,28 @@
 <body>
 
     <div class="loginAndSignup">
-        <!-- <div class="userLoginArea">
-            <h2><i class="mdi mdi-window-close"></i></h2>
+        <div class="userLoginArea">
+            <h2><i class="mdi mdi-window-close closer"></i></h2>
             <h5>Login to Orculance</h5>
-            <form >
-                <input type="text" name="" placeholder="Email">
-                <input type="password" name="" placeholder="Password">
-                <input type="submit" name="" value="Continue">
+            <form>
+                <input type="text" name="username" id="logpassword" placeholder="Email">
+                <input type="password" name="password" id="logpassword" placeholder="Password">
+                <input type="submit" name="submitLog" id="submitLog" value="Continue">
             </form>
-            <p><span>Not a member?</span> <a href="#">Join</a></p>
-        </div> -->
+            <p><span>Not a member?</span> <a class="userReg" href="#">Join</a></p>
+        </div>
         <div class="userSignUpArea">
-            <h2><i class="mdi mdi-window-close"></i></h2>
+            <h2><i class="mdi mdi-window-close closer"></i></h2>
             <h5>Create an account with Orculance</h5>
             <form>
-                <input type="text" class="halfs" name="" placeholder="First Name" required>
-                <input type="text" class="halfs" name="" placeholder="Last Name" required>
-                <input type="text" class="halfs" name="" placeholder="Email Address" required>
-                <input type="text" class="halfs" name="" placeholder="Username" required>
-                <input type="number" class="halfs" name="" placeholder="Phone Number" required>
-                <input type="number" class="halfs" name="" placeholder="Price per Hour" required>
-                <input type="password" name="" placeholder="Password" required>
-                <input type="password" name="" placeholder="Re-Type Password" required>
+                <input type="text" class="halfs" name="firstname" id="firstname" placeholder="First Name" required>
+                <input type="text" class="halfs" name="lastname" id="lastname" placeholder="Last Name" required>
+                <input type="text" class="halfs" name="email" id="email" placeholder="Email Address" required>
+                <input type="text" class="halfs" name="username" id="username" placeholder="Username" required>
+                <input type="number" class="halfs" name="number" id="number" placeholder="Phone Number" required>
+                <input type="number" class="halfs" name="price" id="price" placeholder="Price per Hour" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Re-Type Password" required>
                 <select name="category" id="category" required>
                     <option>-- Select Category --</option>
                     <option value="Programming & Tech">Software Engineering</option>
@@ -86,9 +86,9 @@
                 </select>
                 <textarea name="briefdes" id="briefdes" rows="5" placeholder="Brief description about yourself"
                     required></textarea>
-                <input type="submit" name="" value="Continue">
+                <input type="submit" name="submitLog" id="submitLog" value="Continue">
             </form>
-            <p><span>Already a member?</span> <a href="#">Login</a></p>
+            <p><span>Already a member?</span> <a class="userLog" href="#">Login</a></p>
         </div>
     </div>
 
@@ -104,7 +104,9 @@
         </ul>
     </div>
 
-    <div id="page-content"></div>
+    <div id="page-content">
+        <div class="firstHead"></div>
+    </div>
 
     <!-- <script type="text/javascript" src="app/app.js"></script> -->
     <script src="js/jquery-3.3.1.min.js"></script>

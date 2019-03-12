@@ -32,6 +32,29 @@ $(document).ready(function () {
         $(".viewProfileArea").show();
         $(".logoArea").css("display", "block");
     });
+    $(".logIns").click(function () {
+        $(".loginAndSignup").fadeIn();
+        $(".userLoginArea").fadeIn();
+        $(".userSignUpArea").fadeOut();
+    });
+    $(".signUps").click(function () {
+        $(".loginAndSignup").fadeIn();
+        $(".userLoginArea").fadeOut();
+        $(".userSignUpArea").fadeIn();
+    });
+    $(".userReg").click(function (e) {
+        e.preventDefault();
+        $(".userLoginArea").fadeOut();
+        $(".userSignUpArea").fadeIn();
+    });
+    $(".userLog").click(function (e) {
+        e.preventDefault();
+        $(".userLoginArea").fadeIn();
+        $(".userSignUpArea").fadeOut();
+    });
+    $(".closer").click(function () {
+        $(".loginAndSignup").fadeOut();
+    });
 
     var timer;
     var doneTypingInterval = 5000;
@@ -152,18 +175,18 @@ $(document).ready(function () {
                 }
                 else {
 
-                localStorage.setItem('username' , username);
+                    localStorage.setItem('username', username);
 
-                for (i in res) {
-                    if (res[i].status == 1) {
-                        $(".result").append('<p class="resultDanger">This account has been deleted.</p>')
-                    }
+                    for (i in res) {
+                        if (res[i].status == 1) {
+                            $(".result").append('<p class="resultDanger">This account has been deleted.</p>')
+                        }
 
-                    else {
-                        window.location.assign(`dashboard.html?username=${username}`);
+                        else {
+                            window.location.assign(`dashboard.html?username=${username}`);
+                        }
                     }
                 }
-            }
             },
             beforeSend: function () {
                 setInterval(function () {
