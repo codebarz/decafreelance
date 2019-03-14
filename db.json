@@ -2,17 +2,18 @@
   "users": [
     {
       "firstname": "Tega",
-      "lastname": "Oke",
-      "email": "oketegah@gmail.com",
       "price": "30",
       "phonenumber": "08051812473",
-      "username": "oketegah",
-      "profimage": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg",
-      "coverimage": "https://images.unsplash.com/photo-1486475554424-2fa50cd59f18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
-      "password": "11861538da",
-      "category": "Software Engineering",
       "description": "A Freelancer PHP Developer",
-      "date": "12/03/2019",
+      "lastname": "Oke",
+      "username": "oketegah",
+      "email": "oketegah@gmail.com",
+      "password": "11861538da",
+      "cpassword": "11861538da",
+      "coverimage": "https://images.unsplash.com/photo-1486475554424-2fa50cd59f18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
+      "profimage": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg",
+      "category": "Software Engineering",
+      "date": "14/03/2019",
       "id": 1
     },
     {
@@ -60,6 +61,36 @@
       "description": "Founder of Globacom, Conoil and many other.",
       "date": "13/03/2019",
       "id": 4
+    },
+    {
+      "firstname": "Obafemi",
+      "lastname": "Awolowo",
+      "email": "obafemi@gmail.com",
+      "price": "300",
+      "Phonenumber": "080766778899",
+      "username": "obafemi",
+      "profimage": "http://sites.psu.edu/afr110/wp-content/uploads/sites/14793/2014/10/76284-004-742F84F8.jpg",
+      "coverimage": "http://sites.psu.edu/afr110/wp-content/uploads/sites/14793/2014/10/76284-004-742F84F8.jpg",
+      "password": "obafemi",
+      "category": "Life Style",
+      "description": "A legend in Nigeria. The Obafemi Awolowo University was named after him",
+      "date": "14/03/2019",
+      "id": 5
+    },
+    {
+      "firstname": "Anikulapo",
+      "lastname": "Fela",
+      "email": "fela@gmail.com",
+      "price": "20",
+      "Phonenumber": "090887788",
+      "username": "fela",
+      "profimage": "https://i.guim.co.uk/img/media/4b1c650c886a6d6d66bfbf6ac788455c7663b2d9/0_250_3680_4597/master/3680.jpg?width=300&quality=85&auto=format&fit=max&s=9a5ea4b3a8d5a1ed7ef05fe23bfd70c9",
+      "coverimage": "https://i.guim.co.uk/img/media/4b1c650c886a6d6d66bfbf6ac788455c7663b2d9/0_250_3680_4597/master/3680.jpg?width=300&quality=85&auto=format&fit=max&s=9a5ea4b3a8d5a1ed7ef05fe23bfd70c9",
+      "password": "fela",
+      "category": "Music",
+      "description": "A lengendary artist. Good with the saxophone. I am available for am form of musical training",
+      "date": "14/03/2019",
+      "id": 6
     }
   ]
 }

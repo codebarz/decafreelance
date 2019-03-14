@@ -1740,6 +1740,7 @@ p.profPrice {
 	text-align: left;
 	font: bold 14px sans-serif;
 	padding: 55px 50px;
+    clear: both;
 }
 
 .footer-distributed .footer-left,
@@ -1747,6 +1748,25 @@ p.profPrice {
 .footer-distributed .footer-right{
 	display: inline-block;
 	vertical-align: top;
+}
+.editAcc {
+    width: auto;
+    position: fixed;
+    right: 10px;
+    top: 60px;
+    font-size: 12px;
+    font-weight: 500;
+    display: none;
+    cursor: pointer;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    z-index: 9999999999999999999;
+}
+.editProfiles i {
+    color: #dd0d0d;
 }
 
 /* Footer left */

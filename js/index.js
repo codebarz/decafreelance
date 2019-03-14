@@ -45,6 +45,9 @@ $(document).ready(function () {
     $(".closer").click(function () {
         $(".loginAndSignup").fadeOut();
     });
+    $(".editAcc").click(function() {
+        $(".editProfiles").fadeIn();
+    });
 
 
     var timer;
@@ -90,8 +93,8 @@ $(document).ready(function () {
     if (!confirmUser) {
         mainHeader = "";
         mainHeader += '<ul class="menuOptions">';
-        mainHeader += '<a href="home.html"><li class="active">Home</li></a>';
-        mainHeader += '<li>About Us</li>';
+        mainHeader += '<a href="index.html"><li class="active">Home</li></a>';
+        // mainHeader += '<li>About Us</li>';
         mainHeader += '<li><i class="mdi mdi-headphones"></i>Customer Support</li>';
         mainHeader += '<li class="logIns">Login</li>';
         mainHeader += '<li class="signUps">Sign Up</li>';
@@ -111,21 +114,25 @@ $(document).ready(function () {
         });
     }
     else {
-        
         mainHeader = "";
         mainHeader += `<ul class="togOptions" style = "margin-right: 10px" >`;
         mainHeader += `<li><i class="mdi mdi-chevron-down togger"></i></li>`;
         mainHeader += `</ul>`;
         mainHeader += `<ul class="togOptions">`;
-        mainHeader += `<li><img src="images/bacgdroung.png" /></li>`;
-        mainHeader += `</ul>`;
+
+        var userimage = localStorage.getItem('image');
+    
+        mainHeader += `<li><img src="${userimage}" /></li>`;
+        
+    
+    mainHeader += `</ul>`;
         mainHeader += '<ul class="menuOptions">';
-        mainHeader += '<a href="home.html"><li class="active">Home</li></a>';
+        mainHeader += '<a href="index.html"><li class="active">Home</li></a>';
         mainHeader += '<li><i class="mdi mdi-headphones"></i>Customer Support</li>';
         mainHeader += '<li class="signUps"><form id="logout"><input type="submit" name="flogout" id="flogout" value="Logout"></form></li>';
         mainHeader += '</ul>';
-        mainHeader += `<script>$("ul.togOptions").click(function () {
-            $(".editProfiles").fadeIn();
+        mainHeader += `<script>$(".togger").click(function () {
+            $(".editAcc").toggle();
         });</script>`;
 
         $(".account-menu-header").append(mainHeader);
@@ -204,6 +211,7 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?username=${username}&password=${password}`,
             data: { "username": username, "password": password },
             success: function (res) {
+                
                 if (res.length == 0) {
                     $(".result").append('<p class="resultDanger">Incorrect username or password</p>');
                     setInterval(function () {
@@ -211,8 +219,8 @@ $(document).ready(function () {
                     }, 5000);
                 }
                 else {
-
                     localStorage.setItem('username', username);
+                    localStorage.setItem('image', res[0].profimage);
 
                     for (i in res) {
                         if (res[i].status == 1) {
@@ -572,8 +580,7 @@ $(document).ready(function () {
         $('.business').removeClass('active');
         $('.life').removeClass('active');
         $('.digital').removeClass('active');
-        $('.write').removeClass('active');
-        var write = 'Writing';
+        var write = 'Writing & Translation';
         $.ajax({
             method: 'GET',
             url: `http://localhost:3000/users?category=${write}`,
