@@ -245,7 +245,7 @@ $(document).ready(function () {
         url: `http://localhost:3000/users?category=${soft}`,
         dataType: 'JSON',
         success: function (res) {
-            console.log(res);
+            console.log(res , $("#featuredView").html(''));
             $.each(res, function (index, value) {
 
                 usercat = "";
@@ -291,7 +291,7 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?category=${soft}`,
             dataType: 'JSON',
             success: function (res) {
-                console.log(res);
+                console.log(res, $("#featuredView").html(''));
                 $.each(res, function (idex, value) {
 
                     usercat = "";
@@ -339,7 +339,7 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?category=${fashion}`,
             dataType: 'JSON',
             success: function (res) {
-                console.log(res);
+                console.log(res, $("#featuredView").html(''));
                 $.each(res, function (idex, value) {
 
                     usercat = "";
@@ -388,7 +388,7 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?category=${bus}`,
             dataType: 'JSON',
             success: function (res) {
-                console.log(res);
+                console.log(res, $("#featuredView").html(''));
                 $.each(res, function (index, value) {
 
                     usercat = "";
@@ -436,8 +436,8 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?category=${life}`,
             dataType: 'JSON',
             success: function (res) {
-                console.log(res);
-                $.each(res, function (idex, value) {
+                console.log(res, $("#featuredView").html(''));
+                $.each(res, function (index, value) {
 
                     usercat = "";
                     usercat += `<div id="make-3D-space">`;
@@ -484,8 +484,8 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?category=${music}`,
             dataType: 'JSON',
             success: function (res) {
-                console.log(res);
-                $.each(res, function (idex, value) {
+                console.log(res, $("#featuredView").html(''));
+                $.each(res, function (index, value) {
 
                     usercat = "";
                     usercat += `<div id="make-3D-space">`;
@@ -532,8 +532,8 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?category=${digital}`,
             dataType: 'JSON',
             success: function (res) {
-                console.log(res);
-                $.each(res, function (idex, value) {
+                console.log(res, $("#featuredView").html(''));
+                $.each(res, function (index, value) {
 
                     usercat = "";
                     usercat += `<div id="make-3D-space">`;
@@ -580,8 +580,8 @@ $(document).ready(function () {
             url: `http://localhost:3000/users?category=${write}`,
             dataType: 'JSON',
             success: function (res) {
-                console.log(res);
-                $.each(res, function (idex, value) {
+                console.log(res, $("#featuredView").html(''));
+                $.each(res, function (index, value) {
 
                     usercat = "";
                     usercat += `<div id="make-3D-space">`;
