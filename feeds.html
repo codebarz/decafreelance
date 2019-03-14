@@ -48,6 +48,54 @@
 </head>
 
 <body>
+    <div class="editProfiles"></div>
+
+    <div class="loginAndSignup">
+        <div class="userLoginArea">
+            <h2><i class="mdi mdi-window-close closer"></i></h2>
+            <h5>Login to Orculance</h5>
+            <form id="submitLogForm">
+                <input type="text" name="username" id="logusername" placeholder="Email">
+                <input type="password" name="password" id="logpassword" placeholder="Password">
+                <input type="submit" name="submitLog" id="submitLog" value="Continue">
+            </form>
+            <p><span>Not a member?</span> <a class="userReg" href="#">Join</a></p>
+        </div>
+        <div class="userSignUpArea">
+            <h2><i class="mdi mdi-window-close closer"></i></h2>
+            <h5>Create an account with Orculance</h5>
+            <div class="result"></div>
+            <form id="submitSignForm">
+                <input type="text" class="halfs" name="firstname" id="firstname" placeholder="First Name" required>
+                <input type="text" class="halfs" name="lastname" id="lastname" placeholder="Last Name" required>
+                <input type="text" class="halfs" name="email" id="email" placeholder="Email Address" required>
+                <input type="text" class="halfs" name="username" id="username" placeholder="Username" required>
+                <input type="number" class="halfs" name="number" id="number" placeholder="Phone Number" required>
+                <input type="number" class="halfs" name="price" id="price" placeholder="Price per Hour" required>
+                <input type="text" name="profimage" id="profimage" placeholder="Profile Image URL" required>
+                <input type="text" name="coverimage" id="coverimage" placeholder="Cover Image URL" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="text" name="cpassword" id="cpassword" placeholder="Confrim Password" required>
+                <select name="category" id="category" required>
+                    <option>-- Select Category --</option>
+                    <option value="Programming & Tech">Software Engineering</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Business">Business</option>
+                    <option value="Life Style">Life Style</option>
+                    <option value="Music & Audio">Music</option>
+                    <option value="Writing & Translation">Writing</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Video & Animation">Video</option>
+                </select>
+                <textarea name="briefdes" id="briefdes" rows="5" placeholder="Brief description about yourself"
+                    required></textarea>
+                <input type="submit" name="submitForm" id="submitForm" value="Continue">
+            </form>
+            <p><span>Already a member?</span> <a class="userLog" href="#">Login</a></p>
+        </div>
+    </div>
+
+
     <div class='account-header'>
         <div class='account-main-header'>
             <div class='account-logo-header'></div>
@@ -58,12 +106,6 @@
                     <input type='search' name='accountSearch' id='accountSearch' placeholder='Search Here...' />
                 </form>
             </div>
-            <ul class="togOptions" style="margin-right: 10px">
-                <li><i class="mdi mdi-chevron-down"></i></li>
-            </ul>
-            <ul class="togOptions">
-                <li><img src="images/bacgdroung.png" /></li>
-            </ul>
         </div>
     </div>
 
@@ -72,20 +114,36 @@
     </div>
 
     <div class='account-menu-header'>
-        <ul class="menuOptions">
-            <li class="active"><i class="mdi mdi-message-bulleted"></i>Feeds</li>
-            <li><i class="mdi mdi-newspaper"></i>News</li>
-            <li><i class="mdi mdi-message"></i>Chat</li>
-        </ul>
-        <ul class="menuTogOptions">
-            <!-- <li><i class="mdi mdi-headset"></i></li> -->
-            <li><i class="mdi mdi-bell"></i><span class="notAlert">
-                    <!-- 128 --></span></li>
-            <li class="chat-toggler"><i class="mdi mdi-menu"></i></li>
-        </ul>
     </div>
 
-    <div id="page-content"></div>
+    <div id="page-content">
+        <div class="userview">
+
+            <div class="profileSlate">
+
+            </div>
+
+        </div>
+        <div class="otherview">
+            <div class="featured" style="padding-top: 10px;">
+                <h6>Featured Freelancers</h6>
+                <ul class="featuredMenu">
+                    <li class="active software">Software Engineering</li>
+                    <li class="fashion">Fashion</li>
+                    <li class="business">Business</li>
+                    <li class="life">Life Style</li>
+                    <li class="music">Music</li>
+                    <li class="digital">Digital Marketing</li>
+                    <li class="write">Writing</li>
+                </ul>
+                <div id="featuredView">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
 
     <!-- <script type="text/javascript" src="app/app.js"></script> -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -96,6 +154,8 @@
         crossorigin="anonymous"></script>
     <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/getprofile.js"></script>
+    <script src="js/updates.js"></script>
 </body>
 
 </html>

@@ -32,16 +32,6 @@ $(document).ready(function () {
         $(".viewProfileArea").show();
         $(".logoArea").css("display", "block");
     });
-    $(".logIns").click(function () {
-        $(".loginAndSignup").fadeIn();
-        $(".userLoginArea").fadeIn();
-        $(".userSignUpArea").fadeOut();
-    });
-    $(".signUps").click(function () {
-        $(".loginAndSignup").fadeIn();
-        $(".userLoginArea").fadeOut();
-        $(".userSignUpArea").fadeIn();
-    });
     $(".userReg").click(function (e) {
         e.preventDefault();
         $(".userLoginArea").fadeOut();
@@ -55,6 +45,7 @@ $(document).ready(function () {
     $(".closer").click(function () {
         $(".loginAndSignup").fadeOut();
     });
+
 
     var timer;
     var doneTypingInterval = 5000;
@@ -95,14 +86,62 @@ $(document).ready(function () {
 
     }
 
+    var confirmUser = localStorage.getItem('username');
+    if (!confirmUser) {
+        mainHeader = "";
+        mainHeader += '<ul class="menuOptions">';
+        mainHeader += '<a href="home.html"><li class="active">Home</li></a>';
+        mainHeader += '<li>About Us</li>';
+        mainHeader += '<li><i class="mdi mdi-headphones"></i>Customer Support</li>';
+        mainHeader += '<li class="logIns">Login</li>';
+        mainHeader += '<li class="signUps">Sign Up</li>';
+        mainHeader += '</ul>';
+
+        $(".account-menu-header").append(mainHeader);
+
+        $(".logIns").click(function () {
+            $(".loginAndSignup").fadeIn();
+            $(".userLoginArea").fadeIn();
+            $(".userSignUpArea").fadeOut();
+        });
+        $(".signUps").click(function () {
+            $(".loginAndSignup").fadeIn();
+            $(".userLoginArea").fadeOut();
+            $(".userSignUpArea").fadeIn();
+        });
+    }
+    else {
+        
+        mainHeader = "";
+        mainHeader += `<ul class="togOptions" style = "margin-right: 10px" >`;
+        mainHeader += `<ul class="togOptions" style = "margin-right: 10px" >`;
+        mainHeader += `<li><i class="mdi mdi-chevron-down togger"></i></li>`;
+        mainHeader += `</ul>`;
+        mainHeader += `<ul class="togOptions">`;
+        mainHeader += `<li><img src="images/bacgdroung.png" /></li>`;
+        mainHeader += `</ul>`;
+        mainHeader += '<ul class="menuOptions">';
+        mainHeader += '<a href="home.html"><li class="active">Home</li></a>';
+        mainHeader += '<li><i class="mdi mdi-headphones"></i>Customer Support</li>';
+        mainHeader += '<li class="signUps"><form id="logout"><input type="submit" name="flogout" id="flogout" value="Logout"></form></li>';
+        mainHeader += '</ul>';
+        mainHeader += `<script>$("ul.togOptions").click(function () {
+            $(".editProfiles").fadeIn();
+        });</script>`;
+
+        $(".account-menu-header").append(mainHeader);
+    }
+
     $('#submitSignForm').submit(function (e) {
         e.preventDefault();
 
         var firstname = $('input[name="firstname"]').val();
         var lastname = $('input[name="lastname"]').val();
         var email = $('input[name="email"]').val();
-        var username = $('input[name="username"]').val();
-        var password = $('input[name="password"]').val();
+        var username = $('#username').val();
+        var coverimage = $("#coverimage").val();
+        var profimage = $("#profimage").val();
+        var password = $('#password').val();
         var price = $("#price").val();
         var phonenumber = $("#number").val();
         var category = $('#category').val();
@@ -115,45 +154,44 @@ $(document).ready(function () {
         if (password != cpassword) {
             $(".result").append('<p class="resultDanger">Passwords do not match</p>');
         }
-        else {
-            $.ajax({
-                method: "GET",
-                dataType: "json",
-                url: `http://localhost:3000/users?username=${username}`,
-                success: function (res) {
-                    if (res.length == 1) {
-                        $(".result").append('<p class="resultDanger">Username already exist</p>');
-                    }
-                    else {
-
-                        $.ajax({
-                            method: "POST",
-                            url: "http://localhost:3000/users",
-                            data: {
-                                "firstname": firstname,
-                                "lastname": lastname,
-                                "email": email,
-                                "price": price,
-                                "Phonenumber": phonenumber,
-                                "username": username,
-                                "password": password,
-                                "category": category,
-                                "description": briefdes,
-                                "date": currentDate
-                            },
-                            success: function (res) {
-                                $(".result").append('<p class="resultSuccess">Successful. Kindly Login</p>')
-                            },
-                            beforeSend: function () {
-                                $('.logoForm').fadeOut().fadeIn();
-                            }
-                        });
-                    }
+        $.ajax({
+            method: "GET",
+            dataType: "json",
+            url: `http://localhost:3000/users?username=${username}`,
+            success: function (res) {
+                if (res.length == 1) {
+                    $(".result").append('<p class="resultDanger">Username already exist</p>');
                 }
-            })
+                else {
 
-        }
-
+                    $.ajax({
+                        method: "POST",
+                        url: "http://localhost:3000/users",
+                        data: {
+                            "firstname": firstname,
+                            "lastname": lastname,
+                            "email": email,
+                            "price": price,
+                            "Phonenumber": phonenumber,
+                            "username": username,
+                            "profimage": profimage,
+                            "coverimage": coverimage,
+                            "password": password,
+                            "category": category,
+                            "description": briefdes,
+                            "date": currentDate
+                        },
+                        success: function (res) {
+                            $(".result").append('<p class="resultSuccess">Successful. Kindly Login</p>');
+                            location.reload();
+                        },
+                        beforeSend: function () {
+                            $('.logoForm').fadeOut().fadeIn();
+                        }
+                    });
+                }
+            }
+        })
     });
 
     $("#submitLogForm").submit(function (e) {
@@ -183,7 +221,7 @@ $(document).ready(function () {
                         }
 
                         else {
-                            window.location.assign(`dashboard.html?username=${username}`);
+                            location.reload();
                         }
                     }
                 }
@@ -195,4 +233,426 @@ $(document).ready(function () {
             }
         });
     });
+    $("#logout").click(function (e) {
+        e.preventDefault();
+        localStorage.clear();
+        window.location.assign('home.html');
+    });
+
+    var soft = 'Software Engineering';
+    $.ajax({
+        method: 'GET',
+        url: `http://localhost:3000/users?category=${soft}`,
+        dataType: 'JSON',
+        success: function (res) {
+            console.log(res);
+            $.each(res, function (index, value) {
+
+                usercat = "";
+                usercat += `<div id="make-3D-space">`;
+                usercat += `<div id="product-card">`;
+                usercat += `<div id="product-front">`;
+                usercat += `<div class="shadow"></div>`;
+                usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                usercat += `<div class="image_overlay">`;
+                usercat += `<div class="product-options">`;
+                usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                usercat += `</div>`;
+                usercat += `</div>`;
+                usercat += `<div class="stats">`;
+                usercat += `<div class="stats-container">`;
+                usercat += `<span class="product_price">$${value.price}</span>`;
+                usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                usercat += `<p>${value.category}</p>`;
+                usercat += `</div>`;
+                usercat += `</div>`;
+                usercat += `</div>`;
+                usercat += `</div>`;
+                usercat += `</div>`;
+
+                $("#featuredView").append(usercat);
+            });
+        }
+    });
+
+    $(".software").click(function () {
+        $(this).addClass('active');
+        $('.music').removeClass('active');
+        $('.fashion').removeClass('active');
+        $('.business').removeClass('active');
+        $('.life').removeClass('active');
+        $('.digital').removeClass('active');
+        $('.write').removeClass('active');
+        var soft = 'Software Engineering';
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${soft}`,
+            dataType: 'JSON',
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (idex, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $("#featuredView").append(usercat);
+                });
+            }
+        });
+    });
+
+    $('.fashion').click(function () {
+        $(".featuredView").html();
+        $(this).addClass('active');
+        $('.music').removeClass('active');
+        $('.software').removeClass('active');
+        $('.business').removeClass('active');
+        $('.life').removeClass('active');
+        $('.digital').removeClass('active');
+        $('.write').removeClass('active');
+        var fashion = 'Fashion';
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${fashion}`,
+            dataType: 'JSON',
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (idex, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $("#featuredView").append(usercat);
+                });
+            }
+        });
+
+    });
+
+    $('.business').click(function () {
+
+        $(this).addClass('active');
+        $('.music').removeClass('active');
+        $('.fashion').removeClass('active');
+        $('.software').removeClass('active');
+        $('.life').removeClass('active');
+        $('.digital').removeClass('active');
+        $('.write').removeClass('active');
+        var bus = 'Business';
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${bus}`,
+            dataType: 'JSON',
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (index, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $("#featuredView").append(usercat);
+                });
+            }
+        });
+
+    });
+
+    $('.life').click(function () {
+        $(this).addClass('active');
+        $('.music').removeClass('active');
+        $('.fashion').removeClass('active');
+        $('.business').removeClass('active');
+        $('.software').removeClass('active');
+        $('.digital').removeClass('active');
+        $('.write').removeClass('active');
+        var life = 'Life Style';
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${life}`,
+            dataType: 'JSON',
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (idex, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $("#featuredView").append(usercat);
+                });
+            }
+        });
+
+    });
+
+    $('.music').click(function () {
+        $(this).addClass('active');
+        $('.software').removeClass('active');
+        $('.fashion').removeClass('active');
+        $('.business').removeClass('active');
+        $('.life').removeClass('active');
+        $('.digital').removeClass('active');
+        $('.write').removeClass('active');
+        var music = 'Music';
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${music}`,
+            dataType: 'JSON',
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (idex, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $("#featuredView").append(usercat);
+                });
+            }
+        });
+
+    });
+
+    $('.digital').click(function () {
+        $(this).addClass('active');
+        $('.music').removeClass('active');
+        $('.fashion').removeClass('active');
+        $('.business').removeClass('active');
+        $('.life').removeClass('active');
+        $('.software').removeClass('active');
+        $('.write').removeClass('active');
+        var digital = 'Digital Marketing';
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${digital}`,
+            dataType: 'JSON',
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (idex, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $("#featuredView").append(usercat);
+                });
+            }
+        });
+
+    });
+
+    $('.write').click(function () {
+        $(this).addClass('active');
+        $('.music').removeClass('active');
+        $('.software').removeClass('active');
+        $('.business').removeClass('active');
+        $('.life').removeClass('active');
+        $('.digital').removeClass('active');
+        $('.write').removeClass('active');
+        var write = 'Writing';
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${write}`,
+            dataType: 'JSON',
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (idex, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $("#featuredView").append(usercat);
+                });
+            }
+        });
+
+    });
+
+    $('#mainSearchBar').submit(function (e) {
+        var userquery = $('#mainSearcher').val();
+        e.preventDefault();
+        $.ajax({
+            method: 'GET',
+            url: `http://localhost:3000/users?category=${userquery}`,
+            dataType: 'JSON',
+            success: function (res) {
+                $.each(res, function (idex, value) {
+
+                    usercat = "";
+                    usercat += `<div id="make-3D-space">`;
+                    usercat += `<div id="product-card">`;
+                    usercat += `<div id="product-front">`;
+                    usercat += `<div class="shadow"></div>`;
+                    usercat += `<img class="slateImg" src="${value.coverimage}" alt="" />`;
+                    usercat += `<div class="image_overlay">`;
+                    usercat += `<div class="product-options">`;
+                    usercat += `<span><strong><i class="mdi mdi-phone"></i> </strong>${value.phonenumber}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-email"></i></strong>${value.email}</span>`;
+                    usercat += `<span><strong><i class="mdi mdi-newspaper"></i></strong>${value.description}</span>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `<div class="stats">`;
+                    usercat += `<div class="stats-container">`;
+                    usercat += `<span class="product_price">$${value.price}</span>`;
+                    usercat += `<a href="feeds.html?view=${value.username}"><span class="product_name">${value.username}</span></a>`;
+                    usercat += `<p>${value.category}</p>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+                    usercat += `</div>`;
+
+                    $(".searchResult").html(usercat);
+                    $(".searchResult").fadeIn();
+                });
+            }
+        });
+    });
+
 });
