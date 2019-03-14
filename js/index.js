@@ -114,7 +114,6 @@ $(document).ready(function () {
         
         mainHeader = "";
         mainHeader += `<ul class="togOptions" style = "margin-right: 10px" >`;
-        mainHeader += `<ul class="togOptions" style = "margin-right: 10px" >`;
         mainHeader += `<li><i class="mdi mdi-chevron-down togger"></i></li>`;
         mainHeader += `</ul>`;
         mainHeader += `<ul class="togOptions">`;
@@ -648,7 +647,7 @@ $(document).ready(function () {
                     usercat += `</div>`;
                     usercat += `</div>`;
 
-                    $(".searchResult").html(usercat);
+                    $(".resultSearch").html(usercat);
                     $(".searchResult").fadeIn();
                 });
             }
@@ -656,3 +655,21 @@ $(document).ready(function () {
     });
 
 });
+
+$(function () {
+
+    setInterval("slideImages()", 5000);
+
+});
+
+function slideImages() {
+    var oCurImage = $("#mainCarousel div.current");
+    var oNxtImage = oCurImage.next();
+
+    if (oNxtImage.length == 0) {
+        oNxtImage = $("#mainCarousel div:first-child");
+    }
+
+    oCurImage.fadeOut().removeClass('current');
+    oNxtImage.fadeIn().addClass('current').animate({ opacity: 1.0 }, 1000);
+}
