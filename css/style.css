@@ -1102,6 +1102,10 @@ ul.togOptions li i {
     color: #03C9A9;
     font-weight: 600;
 }
+#featuredView {
+    height: 350px;
+    width: auto;
+}
 /* .featured ul.featuredMenu li.active::after {
     width: 0; 
     height: 0; 

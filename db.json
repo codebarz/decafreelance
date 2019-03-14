@@ -28,7 +28,7 @@
       "cpassword": "billgates",
       "coverimage": "https://cnet3.cbsistatic.com/img/h4dOacFAWTJpStN-aj7NfutkNkY=/1600x900/2017/11/28/21f45f6e-fde1-4bbe-811b-5af0eae2b998/gettyimages-880231204.jpg",
       "profimage": "https://specials-images.forbesimg.com/imageserve/5c76b4b84bbe6f24ad99c370/416x416.jpg?background=000000&cropX1=0&cropX2=4000&cropY1=0&cropY2=4000",
-      "category": "Fashion",
+      "category": "Software Engineering",
       "date": "13/03/2019",
       "id": 2
     },
@@ -91,6 +91,51 @@
       "description": "A lengendary artist. Good with the saxophone. I am available for am form of musical training",
       "date": "14/03/2019",
       "id": 6
+    },
+    {
+      "firstname": "Guido",
+      "lastname": "Van Rossum",
+      "email": "van@pyhton.com",
+      "price": "80",
+      "Phonenumber": "08051812473",
+      "username": "guido",
+      "profimage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Guido-portrait-2014-curvves.jpg/290px-Guido-portrait-2014-curvves.jpg",
+      "coverimage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Guido-portrait-2014-curvves.jpg/290px-Guido-portrait-2014-curvves.jpg",
+      "password": "van",
+      "category": "Software Engineering",
+      "description": "Founder of python. Learn pyhton and become a senior dev for the rest of your life. Expecting you",
+      "date": "14/03/2019",
+      "id": 7
+    },
+    {
+      "firstname": "Tosin",
+      "lastname": "Ainah",
+      "email": "oluwatosinainah@gmail.com",
+      "price": "20",
+      "Phonenumber": "08157423489",
+      "username": "Bespoke",
+      "profimage": "https://www.models1.co.uk/images/applywomen3.jpg",
+      "coverimage": "https://www.models1.co.uk/images/applywomen3.jpg",
+      "password": "tosin",
+      "category": "Fashion",
+      "description": "A great fashion designer based in Canada. Deliveries can be made to your location",
+      "date": "14/03/2019",
+      "id": 8
+    },
+    {
+      "firstname": "Rasmus",
+      "lastname": "Lerdorf",
+      "email": "rasmus@php.com",
+      "price": "70",
+      "Phonenumber": "08999889900",
+      "username": "rasmus",
+      "profimage": "https://pbs.twimg.com/profile_images/918348833205116928/V9ROYRNJ_400x400.jpg",
+      "coverimage": "https://pbs.twimg.com/profile_images/918348833205116928/V9ROYRNJ_400x400.jpg",
+      "password": "rasmus",
+      "category": "Software Engineering",
+      "description": "Designed PHP. Learn from me and become the master.",
+      "date": "14/03/2019",
+      "id": 9
     }
   ]
 }
