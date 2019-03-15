@@ -28,7 +28,7 @@ $(document).ready(function () {
             userEdit += `<input type="text" name="uprofimage" id="uprofimage" placeholder="Profile Image URL" value="${res[0].profimage}" required>`;
             userEdit += `<input type="text" name="ucoverimage" id="ucoverimage" placeholder="Cover Image URL" value="${res[0].coverimage}" required>`;
             userEdit += `<input type="password" name="upassword" id="upassword" placeholder="Password" value="${res[0].password}" required>`;
-            userEdit += `<input type="text" name="ucpassword" id="ucpassword" placeholder="Confrim Password" value="${res[0].password}" required>`;
+            userEdit += `<input type="text" name="ucpassword" id="ucpassword" placeholder="Confirm Password" value="${res[0].password}" required>`;
             userEdit += `<select name="ucategory" id="ucategory" required>
                                                                 <option value="${res[0].category}">${res[0].category}</option>
                                                                 <option value="Software Engineering">Software Engineering</option>
@@ -89,6 +89,13 @@ $(document).ready(function () {
                     },
                     success: function (res) {
                         alert("Account updated successfully");
+                        localStorage.setItem('username', username);
+                        localStorage.setItem('image', profimage);
+                        localStorage.setItem('firstname', firstname);
+                        localStorage.setItem('lastname', lastname);
+                        localStorage.setItem('description', description);
+                        localStorage.setItem('startprice', startprice);
+                        localStorage.setItem('lastprice', lastprice);
 
                     }
                 });

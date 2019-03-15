@@ -178,6 +178,38 @@
       "category": "software engineering",
       "date": "15/03/2019",
       "id": 11
+    },
+    {
+      "firstname": "Akintunde",
+      "lastname": "Naomi",
+      "startprice": "90",
+      "lastprice": "100",
+      "coverimage": "https://i.pinimg.com/236x/59/58/3c/59583cdf3cc1d618c49935dd5f77501d--black-models-top-models.jpg",
+      "profimage": "https://i.pinimg.com/236x/59/58/3c/59583cdf3cc1d618c49935dd5f77501d--black-models-top-models.jpg",
+      "description": "All your fashion needs (sewing, ankara sale). Contact me.",
+      "phonenumber": "0876541566",
+      "username": "naomi",
+      "email": "naomi@gmail.com",
+      "password": "naomi",
+      "category": "fashion",
+      "date": "15/03/2019",
+      "id": 12
+    },
+    {
+      "firstname": "Bill",
+      "lastname": "Gates",
+      "startprice": "100",
+      "lastprice": "200",
+      "coverimage": "https://specials-images.forbesimg.com/imageserve/5c76b4b84bbe6f24ad99c370/416x416.jpg?background=000000&cropX1=0&cropX2=4000&cropY1=0&cropY2=4000",
+      "profimage": "https://specials-images.forbesimg.com/imageserve/5c76b4b84bbe6f24ad99c370/416x416.jpg?background=000000&cropX1=0&cropX2=4000&cropY1=0&cropY2=4000",
+      "description": "Contact me for your operating system software development",
+      "phonenumber": "1228899",
+      "username": "bill",
+      "email": "bill@outlook.com",
+      "password": "billgates123",
+      "category": "software engineering",
+      "date": "15/03/2019",
+      "id": 13
     }
   ]
 }
