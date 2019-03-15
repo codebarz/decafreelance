@@ -4,7 +4,7 @@ $(document).ready(function () {
     let param = searchUrl.get('view');
     $.ajax({
         type: "GET",
-        url: `http://localhost:3000/users?username=${param}`,
+        url: `${baseurl}users?username=${param}`,
         success: function (res) {
             for (i in res) {
                 

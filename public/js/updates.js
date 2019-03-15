@@ -2,7 +2,7 @@ $(document).ready(function () {
     var confirmUser = localStorage.getItem('username');
     $.ajax({
         method: 'GET',
-        url: `http://localhost:3000/users?username=${confirmUser}`,
+        url: `${baseurl}users?username=${confirmUser}`,
         dataType: 'JSON',
         success: function (res) {
             console.log(res);
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "PUT",
-                    url: `http://localhost:3000/users/${id}`,
+                    url: `${baseurl}users/${id}`,
                     data: {
                         firstname: firstname,
                         lastname: lastname,
@@ -125,7 +125,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "PUT",
-            url: `http://localhost:3000/users?username=${username}`,
+            url: `${baseurl}users?username=${username}`,
             data: {
                 firstname: firstname,
                 price: price,

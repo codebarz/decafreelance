@@ -69,7 +69,7 @@ $(document).ready(function () {
         $.ajax({
             method: "GET",
             dataType: "json",
-            url: `http://localhost:3000/users?category=${searchQuery}`,
+            url: `${baseurl}users?category=${searchQuery}`,
             success: function (res) {
                 $.each(res, function (index, value) {
                     allusers = "";
@@ -98,7 +98,7 @@ $(document).ready(function () {
         e.preventDefault();
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${userquery}`,
+            url: `${baseurl}users?category=${userquery}`,
             dataType: 'JSON',
             success: function (res) {
                 console.log(res);
@@ -259,7 +259,7 @@ $(document).ready(function () {
             $.ajax({
                 method: "GET",
                 dataType: "json",
-                url: `http://localhost:3000/users?username=${username}`,
+                url: `${baseurl}users?username=${username}`,
                 success: function (res) {
                     if (res.length == 1) {
                         $(".result").html('<p class="resultDanger">Username already exist</p>');
@@ -268,7 +268,7 @@ $(document).ready(function () {
                         var transForm = category.toLowerCase();
                         $.ajax({
                             method: "POST",
-                            url: "http://localhost:3000/users",
+                            url: "${baseurl}users",
                             data: {
                                 "email": email,
                                 "phonenumber": phonenumber,
@@ -306,7 +306,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: `http://localhost:3000/users?username=${username}&password=${password}`,
+            url: `${baseurl}users?username=${username}&password=${password}`,
             data: { "username": username, "password": password },
             success: function (res) {
 
@@ -353,7 +353,7 @@ $(document).ready(function () {
     soft = soft.toLowerCase();
     $.ajax({
         method: 'GET',
-        url: `http://localhost:3000/users?category=${soft}`,
+        url: `${baseurl}users?category=${soft}`,
         dataType: 'JSON',
         success: function (res) {
             console.log(res, $("#featuredView").html(''));
@@ -401,7 +401,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${soft}`,
+            url: `${baseurl}users?category=${soft}`,
             dataType: 'JSON',
             success: function (res) {
                 console.log(res, $("#featuredView").html(''));
@@ -451,7 +451,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${fashion}`,
+            url: `${baseurl}users?category=${fashion}`,
             dataType: 'JSON',
             success: function (res) {
                 console.log(res, $("#featuredView").html(''));
@@ -502,7 +502,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${bus}`,
+            url: `${baseurl}users?category=${bus}`,
             dataType: 'JSON',
             success: function (res) {
                 console.log(res, $("#featuredView").html(''));
@@ -552,7 +552,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${life}`,
+            url: `${baseurl}users?category=${life}`,
             dataType: 'JSON',
             success: function (res) {
                 console.log(res, $("#featuredView").html(''));
@@ -601,7 +601,7 @@ $(document).ready(function () {
         music = music.toLowerCase();
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${music}`,
+            url: `${baseurl}users?category=${music}`,
             dataType: 'JSON',
             success: function (res) {
                 if (res.length == 0) {
@@ -650,7 +650,7 @@ $(document).ready(function () {
         digital = digital.toLowerCase();
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${digital}`,
+            url: `${baseurl}users?category=${digital}`,
             dataType: 'JSON',
             success: function (res) {
                 console.log(res, $("#featuredView").html(''));
@@ -698,7 +698,7 @@ $(document).ready(function () {
         write = write.toLowerCase();
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3000/users?category=${write}`,
+            url: `${baseurl}users?category=${write}`,
             dataType: 'JSON',
             success: function (res) {
                 console.log(res, $("#featuredView").html(''));
