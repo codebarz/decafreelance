@@ -14,7 +14,12 @@ $(document).ready(function () {
         
                 userprofile += `<h6>${res[i].firstname} ${res[i].lastname}</h6>`;
                 userprofile += `<p><i class="mdi mdi-newspaper"></i> ${res[i].description}</p>`;
-                userprofile += `<p class="profPrice"> $${res[i].price}</p>`;
+                if (res[i].startprice != res[i].lastprice) {
+                    userprofile += `<p class="profPrice">$${res[i].startprice} - $${res[i].lastprice}</p>`;
+                }
+                else {
+                    userprofile += `<p class="profPrice">$${res[i].startprice}</span>`;
+                }
                 userprofile += `<p><i class="mdi mdi-phone"></i> ${res[i].phonenumber}</p>`;
                 userprofile += `<p><i class="mdi mdi-email"></i> ${res[i].email}</p>`;
                 userprofile += `<p><i class="mdi mdi-calender"></i> Active since ${res[i].date}</p>`;

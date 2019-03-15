@@ -22,15 +22,16 @@ $(document).ready(function () {
             userEdit += `<input type="text" class="halfs" name="ulastname" id="ulastname" placeholder="Last Name" value="${res[0].lastname}" required>`;
             userEdit += `<input type="text" class="halfs" name="uemail" id="uemail" placeholder="Email Address" value="${res[0].email}" required>`;
             userEdit += `<input type="text" class="halfs" name="uusername" id="uusername" placeholder="Username" value="${res[0].username}" required>`;
-            userEdit += `<input type="number" class="halfs" name="unumber" id="unumber" placeholder="Phone Number" value="${res[0].phonenumber}" required>`;
-            userEdit += `<input type="number" class="halfs" name="uprice" id="uprice" placeholder="Price per Hour" value="${res[0].price}" required>`;
+            userEdit += `<input type="number" name="unumber" id="unumber" placeholder="Phone Number" value="${res[0].phonenumber}" required>`;
+            userEdit += `<input type="number" class="halfs" name="startprice" id="startprice" placeholder="Start price per Hour" value="${res[0].startprice}" required>`;
+            userEdit += `<input type="number" class="halfs" name="lastprice" id="lastprice" placeholder="Highest price per Hour" value="${res[0].lastprice}" required>`;
             userEdit += `<input type="text" name="uprofimage" id="uprofimage" placeholder="Profile Image URL" value="${res[0].profimage}" required>`;
             userEdit += `<input type="text" name="ucoverimage" id="ucoverimage" placeholder="Cover Image URL" value="${res[0].coverimage}" required>`;
             userEdit += `<input type="password" name="upassword" id="upassword" placeholder="Password" value="${res[0].password}" required>`;
             userEdit += `<input type="text" name="ucpassword" id="ucpassword" placeholder="Confrim Password" value="${res[0].password}" required>`;
             userEdit += `<select name="ucategory" id="ucategory" required>
                                                                 <option value="${res[0].category}">${res[0].category}</option>
-                                                                <option value="Programming & Tech">Software Engineering</option>
+                                                                <option value="Software Engineering">Software Engineering</option>
                                                                 <option value="Fashion">Fashion</option>
                                                                 <option value="Business">Business</option>
                                                                 <option value="Life Style">Life Style</option>
@@ -56,10 +57,12 @@ $(document).ready(function () {
                 var profimage = $("#uprofimage").val();
                 let password = $("#upassword").val();
                 let cpassword = $("#ucpassword").val();
-                let price = $("#uprice").val();
+                let startprice = $("#startprice").val();
+                let lastprice = $("#lastprice").val();
                 let phonenumber = $("#unumber").val();
                 let description = $("#ubriefdes").val();
                 let category = $("#ucategory").val();
+                category = category.toLowerCase();
                 let id = $("#uid").val();
                 id = Number(id);
                 var fullDate = new Date();
@@ -71,21 +74,22 @@ $(document).ready(function () {
                     url: `http://localhost:3000/users/${id}`,
                     data: {
                         firstname: firstname,
-                        price: price,
-                        phonenumber: phonenumber,
-                        description: description,
                         lastname: lastname,
+                        startprice: startprice,
+                        lastprice: lastprice,
+                        coverimage: coverimage,
+                        profimage: profimage,
+                        description: description,
+                        phonenumber: phonenumber,
                         username: username,
                         email: email,
                         password: password,
-                        cpassword: cpassword,
-                        coverimage: coverimage,
-                        profimage: profimage,
                         category: category,
                         date: currentDate
                     },
                     success: function (res) {
-                        alert('Submitted successfully');
+                        alert("Account updated successfully");
+
                     }
                 });
 
