@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap-grid.min.css">
+    <!-- <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap-grid.min.css"> -->
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/3.5.95/css/materialdesignicons.min.css">
 
 
 </head>
 
-<body style="background: #f1f1f1">
+<body>
 
     <div id="mainDash"></div>
     <div class="dashThreadHead"></div>
@@ -58,22 +58,11 @@
                     <input type="password" name="password" id="password" value="" placeholder="password">
                     <input type="password" style="display: none" name="id" id="id" value="" placeholder="">
                     <input type="text" name="cpassword" id="cpassword" value="" placeholder="Re-Type Password"><br>
-                    <select name="category" id="category" required>
-                        <option>-- Select Category --</option>
-                        <option value="Programming & Tech">Programming & Tech</option>
-                        <option value="Fashion">Fashion</option>
-                        <option value="Business">Business</option>
-                        <option value="Life Style">Life Style</option>
-                        <option value="Music & Audio">Music & Audio</option>
-                        <option value="Writing & Translation">Writing & Translation</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Video & Animation">Video & Animation</option>
-                        <option value="Engineering">Engineering</option>
-                    </select><br>
                     <input type="submit" name="submitEdit" id="submitEdit" value="Update">
                     <input type="submit" name="delete" id="delete" class="bg-danger" value="Delete">
                 </form>
             </div>
+
 
             <div class="editFeed">
                 <a class="twitter-timeline" data-theme="light"
@@ -83,6 +72,28 @@
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
+        <div class="viewProfileArea">
+
+            <div class="editFormArea2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div id="userprofile"></div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <!-- <div id="allusers"></div> -->
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="logoArea">
+        <img src="img/orculancee.png">
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -91,10 +102,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script> -->
     <script src="js/index.js"></script>
     <script src="js/editprofile.js"></script>
-    <script src="js/getusers.js"></script>
+    <script src="js/getprofile.js"></script>
+    <!-- <script src="js/getusers.js"></script> -->
 
 </body>
 

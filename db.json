@@ -2,19 +2,18 @@
   "users": [
     {
       "firstname": "Tega",
-      "startprice": "30",
-      "lastprice": "30",
-      "phonenumber": "08051812473",
-      "description": "A Freelancer PHP Developer",
       "lastname": "Oke",
+      "startprice": "30",
+      "lastprice": "40",
+      "coverimage": "https://images.unsplash.com/photo-1486475554424-2fa50cd59f18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
+      "profimage": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg",
+      "description": "A Freelancer PHP Developer",
+      "phonenumber": "08051812473",
       "username": "oketegah",
       "email": "oketegah@gmail.com",
       "password": "11861538da",
-      "cpassword": "11861538da",
-      "coverimage": "https://images.unsplash.com/photo-1486475554424-2fa50cd59f18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
-      "profimage": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg",
       "category": "software engineering",
-      "date": "14/03/2019",
+      "date": "15/03/2019",
       "id": 1
     },
     {
