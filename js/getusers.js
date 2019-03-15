@@ -26,7 +26,7 @@ $(document).ready(function () {
                     allusers += `<ul class="list-group list-group-flush">`;
                     allusers += `<li class="list-group-item"><i class="mdi mdi-certificate"></i> ${value.category}</li>`;
                     allusers += `<li class="list-group-item"><i class="mdi mdi-phone"></i> ${value.Phonenumber}</li>`;
-                    allusers += `<li class="list-group-item price"><i class="mdi mdi-cash-multiple"></i> ${value.price}/Day</li>`;
+                    allusers += `<li class="list-group-item price"><i class="mdi mdi-cash-multiple"></i>&#x20a6;${value.price}/Day</li>`;
                     allusers += `</ul>`;
                     allusers += `<p class="card-text"><small class="text-muted">Active since ${value.date}</small></p>`;
                     allusers += `<a class="cardLink" href="profile.html?username=${param}&view=${value.username}">View user</a>`;

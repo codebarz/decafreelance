@@ -29,15 +29,20 @@ $(document).ready(function () {
     $("#editForm").submit(function (e) {
         e.preventDefault();
 
-        let firstname = $("#firstname").val();
-        let lastname = $("#lastname").val();
-        let username = $("#username").val();
-        let email = $("#email").val();
-        let password = $("#password").val();
-        let price = $("#price").val();
-        let phonenumber = $("#phonenumber").val();
-        let description = $("#briefdes").val();
+        let firstname = $("#ufirstname").val();
+        let lastname = $("#ulastname").val();
+        let username = $("#uusername").val();
+        let email = $("#uemail").val();
+        var coverimage = $("#ucoverimage").val();
+        var profimage = $("#uprofimage").val();
+        let password = $("#upassword").val();
+        let price = $("#uprice").val();
+        let phonenumber = $("#uphonenumber").val();
+        let description = $("#ubriefdes").val();
         let id = $("#id").val();
+        var fullDate = new Date();
+        var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+        var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
 
         $.ajax({
             type: "PUT",

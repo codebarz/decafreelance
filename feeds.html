@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<title>Welcome to Orculance </title>
+
+<head>
+    <meta charset="uft-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap-grid.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialdesignicons.min.css" type="text/css">
+    <!-- Chatra {literal} -->
+    <!-- <script>
+        (function (d, w, c) {
+            w.ChatraID = '2n4m5qL3q4J7e8qdj';
+            var s = d.createElement('script');
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+        window.ChatraSetup = {
+            colors: {
+                buttonText: '#03C9A9`', /* chat button text color */
+                buttonBg: '#ffffff'    /* chat button background color */
+            }
+        };
+    </script> -->
+    <!-- /Chatra {/literal} -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/598058d54471ce54db65200d/1d5okul9l';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</head>
+
+<body>
+<div class="editAcc" style="top: 100px">
+    Edit Profile
+</div>
+<div class="updateProfileWarn"></div>
+    <div class="editProfiles"></div>
+
+    <div class="loginAndSignup">
+        <div class="userLoginArea">
+            <h2><i class="mdi mdi-window-close closer"></i></h2>
+            <h5>Login to Orculance</h5>
+            <form id="submitLogForm">
+                <input type="text" name="username" id="logusername" placeholder="Email">
+                <input type="password" name="password" id="logpassword" placeholder="Password">
+                <input type="submit" name="submitLog" id="submitLog" value="Continue">
+            </form>
+            <p><span>Not a member?</span> <a class="userReg" href="#">Join</a></p>
+        </div>
+        <div class="userSignUpArea">
+            <h2><i class="mdi mdi-window-close closer"></i></h2>
+            <h5>Create an account with Orculance</h5>
+            <div class="result"></div>
+            <form id="submitSignForm">
+                <input type="text" class="halfs" name="firstname" id="firstname" placeholder="First Name" required>
+                <input type="text" class="halfs" name="lastname" id="lastname" placeholder="Last Name" required>
+                <input type="text" class="halfs" name="email" id="email" placeholder="Email Address" required>
+                <input type="text" class="halfs" name="username" id="username" placeholder="Username" required>
+                <input type="number" class="halfs" name="number" id="number" placeholder="Phone Number" required>
+                <input type="number" class="halfs" name="price" id="price" placeholder="Price per Hour" required>
+                <input type="text" name="profimage" id="profimage" placeholder="Profile Image URL" required>
+                <input type="text" name="coverimage" id="coverimage" placeholder="Cover Image URL" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="text" name="cpassword" id="cpassword" placeholder="Confrim Password" required>
+                <select name="category" id="category" required>
+                    <option>-- Select Category --</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Business">Business</option>
+                    <option value="Life Style">Life Style</option>
+                    <option value="Music">Music</option>
+                    <option value="Writing & Translation">Writing</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                </select>
+                <textarea name="briefdes" id="briefdes" rows="5" placeholder="Brief description about yourself"
+                    required></textarea>
+                <input type="submit" name="submitForm" id="submitForm" value="Continue">
+            </form>
+            <p><span>Already a member?</span> <a class="userLog" href="#">Login</a></p>
+        </div>
+    </div>
+
+
+    <div class='account-header'>
+        <div class='account-main-header'>
+            <div class='account-logo-header'></div>
+            <div class='account-search-header'>
+                <form id="mainSearchBar">
+                    <label for="accountSearchExec"><i class="mdi mdi-magnify"></i></label>
+                    <input type="submit" name="subSearcher" id="subSearcher" />
+                    <input type='search' name="mainSearcher" id="mainSearcher" placeholder='Search Here...' />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="account-news-feed">
+        <div class="news-feed-header"></div>
+    </div>
+
+    <div class='account-menu-header'>
+    </div>
+
+    <div id="page-content">
+        <div class="userview">
+
+            <div class="profileSlate">
+
+            </div>
+
+        </div>
+        <div class="otherview">
+                <div class="searchResult">
+                        <h6>Search Results</h6><br>
+                        <div class="card-columns" style="column-count: 3">
+                            <div class="resultSearch"></div>
+                        </div>
+                    </div>
+            <div class="featured" style="padding-top: 10px;">
+                <h6>Featured Freelancers</h6>
+                <ul class="featuredMenu">
+                    <li class="active software">Software Engineering</li>
+                    <li class="fashion">Fashion</li>
+                    <li class="business">Business</li>
+                    <li class="life">Life Style</li>
+                    <li class="music">Music</li>
+                    <li class="digital">Digital Marketing</li>
+                    <li class="write">Writing</li>
+                </ul>
+                <div id="featuredView" class="card-columns" style="column-count: 3">
+                
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<!-- <h3>Company<span>logo</span></h3> -->
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+				</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>22 Salvation Avenue</span> Illupeju, Nigeria</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+234 805 181 2473</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">oketegah@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					We are a one stop website for freelancers.
+				</p>
+
+				<div class="footer-icons">
+
+					<!-- <a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a> -->
+
+				</div>
+
+			</div>
+
+		</footer>
+
+    <footer id="red">
+        <h2 class="text2">&copy; Orculance - Designed By Oke Tega</h2>
+        <h2 class="text3">-Powered By <strong>Decagon</strong>-</h2>
+    </footer>
+
+
+    <!-- <script type="text/javascript" src="app/app.js"></script> -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/getprofile.js"></script>
+    <script src="js/updates.js"></script>
+</body>
+
+</html>
